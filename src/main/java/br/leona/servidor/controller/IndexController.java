@@ -1,14 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.leona.servidor.controller;
+    
+import br.com.caelum.vraptor.Resource;
+import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Result;
 
-/**
- *
- * @author Nicolas Leona
- */
+
+@Resource
 public class IndexController {
     
+    private Result result;
+    
+    public IndexController(Result r){
+        this.result = r;
+    }
+    
+    @Path("/")
+    public void index(){}
 }
