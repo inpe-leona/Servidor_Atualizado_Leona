@@ -1,4 +1,4 @@
-package br.leona.servidor.controller;
+package br.leona.servidor.mocks;
 
 public class PantIlt {
     
