@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8084/SRCliente_Leona/WSPantilt?wsdl" uri="wsdl/localhost_8084/SRCliente_Leona/WSPantilt.wsdl"/>
     <system systemId="http://localhost:8084/SRCliente_Leona/WSPantilt?xsd=1" uri="wsdl/localhost_8084/SRCliente_Leona/WSPantilt.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?wsdl" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.wsdl"/>
+    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?xsd=1" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.xsd_1.xsd"/>
 </catalog>
