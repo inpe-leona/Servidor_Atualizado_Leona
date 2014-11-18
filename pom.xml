@@ -110,7 +110,8 @@
                                 <wsdlFile>localhost_8080/Estacao_Leona/ControllerServices.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
-                            <wsdlLocation>http://localhost:8080/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
+                            <!--<wsdlLocation>http://localhost:8080/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>-->
+                            <wsdlLocation>http://10.163.16.86:8080/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/ControllerServices.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-ControllerServices</id>
