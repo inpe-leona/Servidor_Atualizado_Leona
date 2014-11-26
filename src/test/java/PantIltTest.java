@@ -45,7 +45,7 @@ public class PantIltTest {
     @Test
     public void moverPantIlt(){
         p.setGraus("10");
-        assertEquals(1, obsService.movimentar(p, "L"));
+        assertEquals(1, obsService.movimentar(5, "L"));
     }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:

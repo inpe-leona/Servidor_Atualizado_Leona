@@ -1,0 +1,403 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	text-decoration: none;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1.4em;
+}
+ol, ul {
+	list-style: none;
+}
+
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+body {
+	font-family: "Lucida Sans Unicode","Lucida Grande",Sans-Serif;
+	color: #007046;
+	background: #F0F0F0 ;
+	font-size: 12px;
+}
+
+
+
+/* ---------------- STYLES --------------- */
+
+#navigation{
+	float: right;
+	width: 150px;
+}
+#intro{
+	width: 450px;
+}
+
+#container{
+	margin:0 auto;
+	text-align: left;
+	width: 950px;
+}
+
+#header{
+	height: 120px;
+	color: #007046;
+	background: transparent url(../images/header-corners.png) no-repeat bottom left;
+}
+
+#content{
+	background-color: rgba(255,255,255,.80);
+	padding: 0 15px 10px 15px;
+	-moz-border-radius: 1em 4em 1em 4em;
+    border-radius: 1em 4em 1em 4em;
+    box-shadow: 5px 5px 5px #585858;
+
+} 
+
+#footer{
+	margin: 2em 0em;
+	background-color: rgba(255,255,255,.50);
+	text-align: center;
+	padding: 3px;
+    clear: both;
+    -moz-border-radius: 4em 1em 4em 1em;
+    border-radius: 4em 1em 4em 1em;
+    color: #007046;
+}
+
+
+
+
+
+
+
+/* ---------------- LINKS --------------- */
+
+a {
+	color: #960028;
+	text-decoration: none;
+}
+
+a:hover {
+    color: #007046;
+}
+
+
+
+
+
+
+
+/* ---------------- HEADLINES --------------- */
+
+#header h1
+{
+	padding: 25px 0 10px 0;
+	margin:0;
+	text-align: center;
+	font-size: 30px;
+	color: #007046;
+}
+
+#header h2 {
+    text-align: center;
+    font-size: 22px;
+    padding: 20px 0 5px 3px;
+    color: #F33D6E;
+    font-weight: 400;
+    border-bottom: 1px solid #F33D6E;
+}
+
+#content h2 {
+	border-bottom: 1px solid #F33D6E;
+	color: #F33D6E;
+	padding: 20px 0 5px 3px;
+    font-size: 18px;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 20px 0px 15px 3px;
+    color: #007046;
+}
+
+
+
+
+
+
+/* ---------------- SPECIFICS --------------- */
+
+.bold {
+    font-weight: 600;
+}
+
+.italic {
+    font-style: italic;
+}
+
+p {
+	padding: 5px 3px;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+ol {
+    list-style-type: decimal;
+    margin-left: 2.5em;
+}
+
+li {
+    padding-bottom: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+#status {
+    height:22px; 
+    color:#960028;
+    font-weight:bold;
+}
+
+
+
+
+
+
+
+
+/* ---------------- TABLES --------------- */
+
+table {
+	border:1px solid #CCCCCC;
+	background-color: #BF5D30;
+	-moz-border-radius: 1em;
+    border-radius: 1em;
+	font-size:14px;
+	margin:0 20px 25px 5px;
+	float: left;
+	display: block;
+	color: #FFFFFF;
+	box-shadow: 3px 3px 3px #CCCCCC;
+}
+
+table.friend1 {
+    background-color: #AD2B4E;
+}
+
+table.friend1 th {
+    border-bottom: 1.5px solid #960028;
+	color: #ffffff;
+}
+
+table.friend2 {
+    background-color: #5FA92A;
+}
+
+table.friend2 th {
+    border-bottom: 1.5px solid #3D9200;
+	color: #FFFFFF;
+}
+
+table.friend2 input[type="text"] {
+    border: 1px solid #87F03C;
+
+}
+
+th {
+	border-bottom: 1.5px solid #A63400;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 600;
+	text-align: left;
+	padding: 6px 8px 3px 8px;
+	text-transform: uppercase;
+}
+
+td {
+	padding: 6px 0px 0 6px;
+}
+
+tr {
+    padding-top: 15px;
+}
+
+
+
+
+
+/* ---------------- FORMS --------------- */
+
+input[type="checkbox"], input[type="radio"] {
+    margin-bottom: 10px;
+    margin-right: 7px;
+}
+
+textarea, input[type="text"] {
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    border: 1px solid #FF7B40;
+    padding: 5px;
+}
+
+input:focus {
+    border: 1px solid #E7003E;
+}
+
+input.submit {
+    color: #fff;
+    background-color: #007046;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    padding: 9px;
+    border: 1px solid #3D9200;
+    float: right;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-right: 40px;
+}
+
+input.submit:hover {
+    background-color: #E7003E;
+    color: #fff;
+}
+
+div#buttons {
+    float:left;
+    height: 300px;
+    width: 170px;
+    margin-top: 70px;
+}
+
+.button {
+    color: #fff;
+    background-color: #82394C;
+    -moz-border-radius: .3em;
+    border-radius: .3em;
+    padding: 12px 6px 6px 6px;
+    border: 1px solid #700E28;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 0px;
+    width: 112px;
+    height: 25px;
+    text-align: center;
+    float: left;
+}
+
+.button:hover {
+    background-color: #AD2B4E;
+    color: #fff;
+}
+
+
+#chosen, #chosen1, #chosen2 {
+padding-top:10px;
+text-align:center;
+color:#ffffff;
+font-weight:700;
+font-size: 16px;
+}
+
+#slider {
+
+}
+
+input[type='range'] {
+-webkit-appearance: none;
+-webkit-border-radius: 5px;
+background-image: -webkit-linear-gradient(top, #A3F06C, #5FA92A, #A3F06C);
+}
+
+
+
+
+
+
+
+
+/* ---------------- DIALOGUES --------------- */
+
+#growl {
+  position: absolute;
+  bottom: 0;
+  right: 5px;
+  width: 320px;
+  z-index: 10;
+}
+
+.notice {
+  position: relative;
+  min-height: 30px;
+}
+
+.skin {
+  position: absolute;
+  background-color: #FF9E73;
+  bottom: 0;
+  left: 0;
+  opacity: 0.8;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  -moz-border-radius: 5px; -webkit-border-radius: 5px;
+}
+
+.close {
+  background: transparent url('../images/egrowl_blue.png') 0 0 no-repeat;
+  text-indent: -9999px;
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  width: 26px;
+  height: 26px;
+}
+
+#growl p {
+  background: inherit;
+  color: #FFF;
+  padding-left: 10px;
+}
+
+
+

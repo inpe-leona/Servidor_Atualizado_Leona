@@ -6,33 +6,53 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
+import br.leona.server.model.Observacao;
 import br.leona.servidor.service.ObservacaoService;
+import java.util.List;
+import javax.swing.JOptionPane;
 
 @Resource
 public class ObservacaoController {
     
     private ObservacaoService obsService;
+    private IndexController indexController;
     private PantIlt p;
     private Result result;
     
-    public ObservacaoController(ObservacaoService os, PantIlt pp, Result result){
-        this.obsService = os;
-        this.p = pp;
+    public ObservacaoController(Result result){
+        this.obsService = new ObservacaoService();
+        this.indexController = new IndexController(result);
+        this.p = new PantIlt();
         this.result = result;
     }
     
     @Post
-    @Path("/movimentaresquerda")    
-    public void movimentarEsquerda(PantIlt p){
-        System.out.println("Graus: "+p.getGraus());
-        int m = obsService.movimentar(p,"L");
-        
-        if (m==1){
-            result.forwardTo("WEB-INF/jsp/index/pantilt.jsp");
+    @Path("/cadastrarObservacao")
+    public void cadastrarObservacao(Observacao observacao){
+        String resposta = obsService.cadastrar(observacao);        
+        if (resposta == "OK"){
+            indexController.paginaListagemObservacao();
         }else{
-            System.out.println("Não Moveu para Esquerda");
-        }
+            JOptionPane.showMessageDialog(null, resposta);
+            indexController.paginaCadastroObservacao();
+        } 
     }
+    
+    @Post
+    @Path("/verObservacao")
+    public void verObservacao(Observacao observacao){
+        System.out.println("Veio Aqui");
+        Observacao o = obsService.buscarObservacao(observacao);
+        indexController.paginaVisualizacaoObservacao(o);        
+    }
+    
+    /*@Post
+    @Path("/movimentaresquerda")    
+    public void movimentarEsquerda(PantIlt pantilt){
+        System.out.println("Graus: "+pantilt.getGraus());
+        obsService.movimentar(pantilt,"L");                
+    }
+    
     @Post
     @Path("/movimentardireita")    
     public void movimentarDireita(PantIlt p){
@@ -108,7 +128,7 @@ public class ObservacaoController {
         }else{
             System.out.println("Não Moveu para Esquerda");
         }
-    }
+    }*/
     
     @Get
     @Path("pantilt")
@@ -117,6 +137,10 @@ public class ObservacaoController {
         result
                 .include("pantilt", pa)
                 .forwardTo("WEB-INF/jsp/index/pantilt.jsp");
+    }
+
+    public List<Observacao> listObservacoes() {
+        return obsService.listObservacoes();
     }
     
 }
