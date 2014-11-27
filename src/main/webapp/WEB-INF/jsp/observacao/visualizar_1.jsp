@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
@@ -5,11 +6,93 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Tech Survey</title>
+        <title>Visualizar Observação | Projeto LEONA</title>
         <meta name="author" content="An Xiao Mina and Elizabeth Gin" />
 
         <meta name="description" content="Tech Survey for Uganda" />
-<script src="http://code.jquery.com/jquery-latest.js">
+
+        <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet"/>
+        <link href="<c:url value="/resources/css/half-slider.css"/>" rel="stylesheet"/>
+        <link href="<c:url value="/resources/css/modern-business.css"/>" rel="stylesheet"/>
+        <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet"/>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="resources/_webCam/js/jquery.webcam.js"></script>
+        <style type="text/css">
+
+
+
+            #canvas {
+                margin-top: 45px;
+            }
+
+            #webcam {
+
+                alignment-baseline: central;
+                margin-top:50px;
+                margin-bottom:500px;
+            }
+
+            #webcam > span {
+                z-index:2;
+                position:absolute;
+                color:#eee;
+                font-size:10px;
+                bottom: -16px;
+                left:152px;
+            }
+
+            #webcam > img {
+                z-index:1;
+                position:absolute;
+                border:0px none;
+                padding:0px;
+                bottom:-40px;
+                left:40px;
+            }
+
+            #filter {
+                border:5px solid #82394C;
+                padding:5px;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                border-radius: 8px;
+                cursor:pointer;
+                float: left;
+            }
+
+            #webcam a {
+                background:#fff;
+                font-weight:bold;
+            }
+
+            #webcam a > img {
+                border:0px none;
+            }
+
+            #canvas {
+                border:20px solid #AD2B4E;
+                background:#eee;
+            }
+
+            #flash {
+                position:absolute;
+                top:0px;
+                left:0px;
+                z-index:5000;
+                width:100%;
+                height:500px;
+                background-color:#c00;
+                display:none;
+            }
+
+            object {
+                display:block; /* HTML5 fix */
+                position:relative;
+                z-index:1000;
+            }
+
+        </style>
+        <script src="http://code.jquery.com/jquery-latest.js">
         </script>
         <script>
             $(document).ready(function () {
@@ -51,75 +134,6 @@
                 });
             });
         </script>
-        <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet"/>
-        <link href="<c:url value="/resources/css/half-slider.css"/>" rel="stylesheet"/>
-        <link href="<c:url value="/resources/css/modern-business.css"/>" rel="stylesheet"/>
-        <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet"/>
-        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="resources/_webCam/js/jquery.webcam.js"></script>
-        <style type="text/css">
-            
-            #canvas {
-                margin-top: 45px;
-            }
-            #webcam {
-                
-                alignment-baseline: central;
-                margin-top:50px;
-                margin-bottom:500px;
-            }
-            #webcam > span {
-                z-index:2;
-                position:absolute;
-                color:#eee;
-                font-size:10px;
-                bottom: -16px;
-                left:152px;
-            }
-            #webcam > img {
-                z-index:1;
-                position:absolute;
-                border:0px none;
-                padding:0px;
-                bottom:-40px;
-                left:40px;
-            }
-            #filter {
-                border:5px solid #82394C;
-                padding:5px;
-                -webkit-border-radius: 8px;
-                -moz-border-radius: 8px;
-                border-radius: 8px;
-                cursor:pointer;
-                float: left;
-            }
-            #webcam a {
-                background:#fff;
-                font-weight:bold;
-            }
-            #webcam a > img {
-                border:0px none;
-            }
-            #canvas {
-                border:20px solid #AD2B4E;
-                background:#eee;
-            }
-            #flash {
-                position:absolute;
-                top:0px;
-                left:0px;
-                z-index:5000;
-                width:100%;
-                height:500px;
-                background-color:#c00;
-                display:none;
-            }
-            object {
-                display:block; /* HTML5 fix */
-                position:relative;
-                z-index:1000;
-            }
-        </style>
     </head>
     <body>
         <div class="span12">
@@ -140,7 +154,8 @@
                     </div>
                 </div>
             </nav>
-                            <table align="center">
+            <br/><br/><br/>
+            <table align="center">
                 <tr>
                     <td>
 
@@ -219,24 +234,29 @@
                     </td>
                 </tr>
             </table>
+
             <h2 style="color:black">Nome da Observação: ${observation.nome}</h2>
             <hr>
-            
+
             <div >
                 <p id="status"></p>
                 <div id="webcam"></div>
                 <script type="text/javascript">
+
                     var pos = 0;
                     var ctx = null;
                     var cam = null;
                     var image = null;
+
                     var filter_on = false;
                     var filter_id = 0;
+
                     function changeFilter() {
                         if (filter_on) {
                             filter_id = (filter_id + 1) & 7;
                         }
                     }
+
                     function toggleFilter(obj) {
                         if (filter_on = !filter_on) {
                             obj.parentNode.style.borderColor = "#007046";
@@ -244,12 +264,14 @@
                             obj.parentNode.style.borderColor = "#82394C";
                         }
                     }
+
                     jQuery("#webcam").webcam({
                         width: 1600,
                         height: 240,
                         mode: "callback",
                         swffile: "resources/_webCam/download/jscam_canvas_only.swf",
                         onTick: function (remain) {
+
                             if (0 == remain) {
                                 jQuery("#status").text("Cheese!");
                             } else {
@@ -257,9 +279,12 @@
                             }
                         },
                         onSave: function (data) {
+
                             var col = data.split(";");
                             var img = image;
+
                             if (false == filter_on) {
+
                                 for (var i = 0; i < 320; i++) {
                                     var tmp = parseInt(col[i]);
                                     img.data[pos + 0] = (tmp >> 16) & 0xff;
@@ -268,15 +293,20 @@
                                     img.data[pos + 3] = 0xff;
                                     pos += 4;
                                 }
+
                             } else {
+
                                 var id = filter_id;
                                 var r, g, b;
                                 var r1 = Math.floor(Math.random() * 255);
                                 var r2 = Math.floor(Math.random() * 255);
                                 var r3 = Math.floor(Math.random() * 255);
+
                                 for (var i = 0; i < 320; i++) {
                                     var tmp = parseInt(col[i]);
+
                                     /* Copied some xcolor methods here to be faster than calling all methods inside of xcolor and to not serve complete library with every req */
+
                                     if (id == 0) {
                                         r = (tmp >> 16) & 0xff;
                                         g = 0xff;
@@ -294,6 +324,7 @@
                                         g = 0xff ^ ((tmp >> 8) & 0xff);
                                         b = 0xff ^ (tmp & 0xff);
                                     } else if (id == 4) {
+
                                         r = (tmp >> 16) & 0xff;
                                         g = (tmp >> 8) & 0xff;
                                         b = tmp & 0xff;
@@ -329,6 +360,7 @@
                                         g = Math.floor(g / 255 * r2);
                                         b = Math.floor(b / 255 * r3);
                                     }
+
                                     img.data[pos + 0] = r;
                                     img.data[pos + 1] = g;
                                     img.data[pos + 2] = b;
@@ -336,6 +368,7 @@
                                     pos += 4;
                                 }
                             }
+
                             if (pos >= 0x4B000) {
                                 ctx.putImageData(img, 0, 0);
                                 pos = 0;
@@ -343,6 +376,7 @@
                         },
                         onCapture: function () {
                             webcam.save();
+
                             jQuery("#flash").css("display", "block");
                             jQuery("#flash").fadeOut(100, function () {
                                 jQuery("#flash").css("opacity", 1);
@@ -352,14 +386,18 @@
                             jQuery("#status").html(type + ": " + string);
                         },
                         onLoad: function () {
+
                             var cams = webcam.getCameraList();
                             for (var i in cams) {
                                 jQuery("#cams").append("<li>" + cams[i] + "</li>");
                             }
                         }
                     });
+
                     function getPageSize() {
+
                         var xScroll, yScroll;
+
                         if (window.innerHeight && window.scrollMaxY) {
                             xScroll = window.innerWidth + window.scrollMaxX;
                             yScroll = window.innerHeight + window.scrollMaxY;
@@ -370,7 +408,9 @@
                             xScroll = document.body.offsetWidth;
                             yScroll = document.body.offsetHeight;
                         }
+
                         var windowWidth, windowHeight;
+
                         if (self.innerHeight) { // all except Explorer
                             if (document.documentElement.clientWidth) {
                                 windowWidth = document.documentElement.clientWidth;
@@ -385,26 +425,34 @@
                             windowWidth = document.body.clientWidth;
                             windowHeight = document.body.clientHeight;
                         }
+
                         // for small pages with total height less then height of the viewport
                         if (yScroll < windowHeight) {
                             pageHeight = windowHeight;
                         } else {
                             pageHeight = yScroll;
                         }
+
                         // for small pages with total width less then width of the viewport
                         if (xScroll < windowWidth) {
                             pageWidth = xScroll;
                         } else {
                             pageWidth = windowWidth;
                         }
+
                         return [pageWidth, pageHeight];
                     }
+
                     window.addEventListener("load", function () {
+
                         jQuery("body").append("<div id=\"flash\"></div>");
+
                         var canvas = document.getElementById("canvas");
+
                         if (canvas.getContext) {
                             ctx = document.getElementById("canvas").getContext("2d");
                             ctx.clearRect(0, 0, 320, 240);
+
                             var img = new Image();
                             img.src = "resources/_webCam/image/smiley.png";
                             img.onload = function () {
@@ -412,70 +460,23 @@
                             }
                             image = ctx.getImageData(0, 0, 320, 240);
                         }
+
                         var pageSize = getPageSize();
                         jQuery("#flash").css({height: pageSize[1] + "px"});
+
                     }, false);
+
                     window.addEventListener("resize", function () {
+
                         var pageSize = getPageSize();
                         jQuery("#flash").css({height: pageSize[1] + "px"});
+
                     }, false);
+
                 </script>
-                
+
             </div>
             <br>
-            <!--<div>
-                <table>
-                    <tr>
-                        <td>
-                        </td>
-                        <td>
-                            <a href="#"><img src="<c:url value="resources/img/cima.png"></c:url>" style="height: 30px; width: 30px"/></a>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td align="right">
-                                <a href="#"><img src="<c:url value="resources/img/esquerda.png"></c:url>" style="height: 30px; width: 30px"/></a>
-                            </td>
-                            <td>
-                            </td>
-                            <td>
-                                <a href="#"><img src="<c:url value="resources/img/direita.png"></c:url>" style="height: 30px; width: 30px"/></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <a href="#"><img src="<c:url value="resources/img/baixo.png"></c:url>" style="height: 30px; width: 30px"/></a>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                    <br/>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Iniciar" id="salvar" class="btn" style="background-color: green; color: white"/>
-                        </td>
-                        <td>
-                        </td>
-                        <td>
-                            <input type="submit" value="Encerrar" id="salvar" class="btn" style="background-color: red; color: white"/>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="">
-                <footer>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <hr/>
-                            <p align="center">&copy; Grupo LEONA 2014</p>
-                        </div>
-                    </div>
-                </footer>
-            </div>
-        </div>-->
+        </div>
     </body>   
 </html>
