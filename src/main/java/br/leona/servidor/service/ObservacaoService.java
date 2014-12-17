@@ -14,8 +14,20 @@ public class ObservacaoService {
     public int movimentar(int p, String l) {
         System.out.println("Graus: "+p);
         int r = 0;
-        if (l == "L"){
+        if (l == "azimute"){
             
+            try { // Call Web Service Operation
+                br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
+                br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
+                // TODO initialize WS operation arguments here
+                
+                // TODO process result here
+                java.lang.String result = port.moverAzimute(p);
+                System.out.println("Result = "+result);
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
+            }
+
             /*try { 
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
@@ -30,8 +42,19 @@ public class ObservacaoService {
             r = 1;
             System.out.println("Movimentou pra Esquerda");
         }
-        if (l == "U"){
+        if (l == "elevacao"){
             
+            try { // Call Web Service Operation
+                br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
+                br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
+                // TODO initialize WS operation arguments here
+                // TODO process result here
+                java.lang.String result = port.moverElevacao(p);
+                System.out.println("Result = "+result);
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
+            }
+
             /*try { 
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();

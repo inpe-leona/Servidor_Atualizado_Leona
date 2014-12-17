@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?wsdl" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.wsdl"/>
-    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?xsd=1" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.xsd_1.xsd"/>
     <system systemId="http://10.163.16.107:8080/Estacao_Leona/ControllerServices?wsdl" uri="wsdl/10.163.16.107_8080/Estacao_Leona/ControllerServices.wsdl"/>
     <system systemId="http://10.163.16.107:8080/Estacao_Leona/ControllerServices?xsd=1" uri="wsdl/10.163.16.107_8080/Estacao_Leona/ControllerServices.xsd_1.xsd"/>
     <system systemId="http://150.163.46.208:8080/Estacao_Leona/ControllerServices?wsdl" uri="wsdl/150.163.46.208_8080/Estacao_Leona/ControllerServices.wsdl"/>
     <system systemId="http://150.163.46.208:8080/Estacao_Leona/ControllerServices?xsd=1" uri="wsdl/150.163.46.208_8080/Estacao_Leona/ControllerServices.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?wsdl" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.wsdl"/>
+    <system systemId="http://localhost:8080/Estacao_Leona/ControllerServices?xsd=1" uri="wsdl/localhost_8080/Estacao_Leona/ControllerServices.xsd_1.xsd"/>
 </catalog>

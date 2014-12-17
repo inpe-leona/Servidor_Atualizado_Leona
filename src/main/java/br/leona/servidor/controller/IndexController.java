@@ -110,13 +110,9 @@ public class IndexController {
 
     @Path("/visualizacaoObservacao")
     void paginaVisualizacaoObservacao(Observacao o) {
-        HttpSession session = request.getSession();
-        String azimute = (String) session.getAttribute("azimute");
-        String elevacao = (String) session.getAttribute("elevacao");
+        
         result
                 .include("observation", o)
-                .include("positionazi", elevacao)
-                .include("positionele", azimute)
                 .forwardTo(RedirecionarPaginasController.VISUALIZAR_OBSERVACAO);
     }
     //endregion

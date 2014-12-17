@@ -42,7 +42,7 @@ public class PantIltTest {
     public void tearDown() {
     }
 
-    @Test
+    //@Test
     public void moverPantIlt(){
         p.setGraus("10");
         assertEquals(1, obsService.movimentar(5, "L"));

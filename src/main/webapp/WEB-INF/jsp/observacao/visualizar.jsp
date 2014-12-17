@@ -13,15 +13,26 @@
         </script>
         <script>
             $(document).ready(function () {
-                $('#mover').click(function (event) {
-                    var elevacao = $('#elevacao').val();
-                    var azimute = $('#azimute').val();
-                    $.get('PantiltMoverServlet', {azimute: azimute, elevacao: elevacao}, function (responseText) {
+                $('#azimute').click(function (event) {
+                    var azimute = $('#azimuteGraus').val();
+                    $.get('PantiltAzimuteServlet', {azimute: azimute}, function (responseText) {
                         $('#welcometext').text(responseText);
                     });
                 });
             });
         </script>
+        
+        <script>
+            $(document).ready(function () {
+                $('#elevacao').click(function (event) {
+                    var elevacao = $('#elevacaoGraus').val();
+                    $.get('PantiltElevacaoServlet', {elevacao: elevacao}, function (responseText) {
+                        $('#welcometext').text(responseText);
+                    });
+                });
+            });
+        </script>
+        
         <script>
             $(document).ready(function () {
                 $('#right').click(function (event) {
@@ -202,14 +213,14 @@
                         <h4>Azimute: </h4>
                     </td>
                     <td align="center">
-                        <input type="text" placeholder="" id="azimute"/>
+                        <input type="text" placeholder="" id="azimuteGraus"/>
                     </td>
                     <td align="left">
                         <!--<input type="button" id="right" value="Right"/>-->
-                        Range: 0º a 270º
+                        Range: 0º a 350º
                     </td>
                     <td align="left">
-                        
+                        <input type="button" id="azimute" value="Mover"/>
                     </td>
                 </tr>
                 <tr>
@@ -221,14 +232,14 @@
                         <h4>Elevação: </h4>
                     </td>
                     <td align="center">
-                        <input type="text" placeholder="" id="elevacao"/>
+                        <input type="text" placeholder="" id="elevacaoGraus"/>
                     </td>
                     <td align="left">
                         <!--<input type="button" id="right" value="Right"/>-->
                         Range: 0º a 60º
                     </td>
                     <td align="center">
-                        
+                        <input type="button" id="elevacao" value="Mover"/>
                     </td>
                 </tr>
                 <tr>
@@ -239,7 +250,7 @@
 
                     </td>
                     <td align="center">
-                        <input type="button" id="mover" value="Mover"/>
+                        
                     </td>
                     <td align="center">
 
