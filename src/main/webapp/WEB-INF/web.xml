@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <servlet>
         <servlet-name>PantiltLeftServlet</servlet-name>
-        <servlet-class>br.leona.servidor.controller.PantiltLeftServlet</servlet-class>
+        <servlet-class>br.leona.servidor.servlet.PantiltLeftServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PantiltLeftServlet</servlet-name>
@@ -14,7 +10,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>PantiltRightServlet</servlet-name>
-        <servlet-class>br.leona.servidor.controller.PantiltRightServlet</servlet-class>
+        <servlet-class>br.leona.servidor.servlet.PantiltRightServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PantiltRightServlet</servlet-name>
@@ -22,7 +18,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>PantiltUpServlet</servlet-name>
-        <servlet-class>br.leona.servidor.controller.PantiltUpServlet</servlet-class>
+        <servlet-class>br.leona.servidor.servlet.PantiltUpServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PantiltUpServlet</servlet-name>
@@ -30,11 +26,19 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>PantiltDownServlet</servlet-name>
-        <servlet-class>br.leona.servidor.controller.PantiltDownServlet</servlet-class>
+        <servlet-class>br.leona.servidor.servlet.PantiltDownServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>PantiltDownServlet</servlet-name>
         <url-pattern>/PantiltDownServlet/*</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>PantiltResetServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.PantiltResetServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PantiltResetServlet</servlet-name>
+        <url-pattern>/PantiltResetServlet/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

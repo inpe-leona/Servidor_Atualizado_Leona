@@ -16,25 +16,23 @@ public class ObservacaoService {
         int r = 0;
         if (l == "L"){
             
-            try { // Call Web Service Operation
+            /*try { 
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
-                // TODO initialize WS operation arguments here
+                
                 int graus = 0;
-                // TODO process result here
+                
                 int result = port.moverEsquerda(p);
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
-                // TODO handle custom exceptions here
-            }
-
-
+                
+            }*/
             r = 1;
             System.out.println("Movimentou pra Esquerda");
         }
         if (l == "U"){
             
-            try { // Call Web Service Operation
+            /*try { 
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
@@ -44,7 +42,7 @@ public class ObservacaoService {
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }
+            }*/
 
 
             r = 1;
@@ -52,7 +50,7 @@ public class ObservacaoService {
         }
         if (l == "R"){
             
-            try { // Call Web Service Operation
+            /*try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
@@ -62,7 +60,7 @@ public class ObservacaoService {
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }
+            }*/
 
 
             r = 1;
@@ -70,7 +68,7 @@ public class ObservacaoService {
         }
         if (l == "D"){
             
-            try { // Call Web Service Operation
+            /*try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
@@ -80,7 +78,7 @@ public class ObservacaoService {
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }
+            }*/
 
 
             r = 1;

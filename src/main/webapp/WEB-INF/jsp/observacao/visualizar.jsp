@@ -13,9 +13,10 @@
         </script>
         <script>
             $(document).ready(function () {
-                $('#left').click(function (event) {
-                    var graus = $('#graus').val();
-                    $.get('PantiltLeftServlet', {graus: graus}, function (responseText) {
+                $('#mover').click(function (event) {
+                    var elevacao = $('#elevacao').val();
+                    var azimute = $('#azimute').val();
+                    $.get('PantiltMoverServlet', {azimute: azimute, elevacao: elevacao}, function (responseText) {
                         $('#welcometext').text(responseText);
                     });
                 });
@@ -46,6 +47,16 @@
                 $('#down').click(function (event) {
                     var graus = $('#graus').val();
                     $.get('PantiltDownServlet', {graus: graus}, function (responseText) {
+                        $('#welcometext').text(responseText);
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#reset').click(function (event) {
+                    var graus = $('#graus').val();
+                    $.get('PantiltResetServlet', {graus: graus}, function (responseText) {
                         $('#welcometext').text(responseText);
                     });
                 });
@@ -140,6 +151,7 @@
                     </div>
                 </div>
             </nav>
+                            <br/>
                             <table align="center">
                 <tr>
                     <td>
@@ -152,10 +164,7 @@
                         </form>
                     </td>
                     <td align="center">
-                        <form id="form" action="<c:url value='/movimentarreset'/>" method="post">
-                            <!--<input type="text" placeholder="Graus" name="pantilt.graus" value="${pantilt.graus}" id="graus"/>-->
-                            <input type="submit" value="RESET" id="enviar">
-                        </form>
+                        <input type="button" id="reset" value="RESET"/>
                     </td>
                     <td align="center">
                         <form id="form" action="<c:url value='/movimentaroff'/>" method="post">
@@ -189,16 +198,37 @@
 
                     </td>
                     <td align="left">
-                        <input type="button" id="left" value="Left"/>
+                        <!--<input type="button" id="left" value="Left"/>-->
+                        <h4>Azimute: </h4>
                     </td>
                     <td align="center">
-                        <input type="text" placeholder="Digite os Graus" id="graus"/>
+                        <input type="text" placeholder="" id="azimute"/>
                     </td>
-                    <td align="right">
-                        <input type="button" id="right" value="Right"/>
+                    <td align="left">
+                        <!--<input type="button" id="right" value="Right"/>-->
+                        Range: 0º a 270º
                     </td>
+                    <td align="left">
+                        
+                    </td>
+                </tr>
+                <tr>
                     <td align="center">
 
+                    </td>
+                    <td align="left">
+                        <!--<input type="button" id="left" value="Left"/>-->
+                        <h4>Elevação: </h4>
+                    </td>
+                    <td align="center">
+                        <input type="text" placeholder="" id="elevacao"/>
+                    </td>
+                    <td align="left">
+                        <!--<input type="button" id="right" value="Right"/>-->
+                        Range: 0º a 60º
+                    </td>
+                    <td align="center">
+                        
                     </td>
                 </tr>
                 <tr>
@@ -209,7 +239,7 @@
 
                     </td>
                     <td align="center">
-                        <input type="button" id="down" value="DOWN"/>
+                        <input type="button" id="mover" value="Mover"/>
                     </td>
                     <td align="center">
 
@@ -218,6 +248,25 @@
 
                     </td>
                 </tr>
+                <tr>
+                    <td align="center">
+
+                    </td>
+                    <td align="center">
+                        <p>Posição atual azimut: ${positionazi}</p>
+                    </td>
+                    <td align="center">
+                        
+                    </td>
+                    <td align="center">
+                        <p>Posição atual elevação: ${positionele}</p>
+                    </td>
+                    <td align="center">
+
+                    </td>
+                </tr>
+                
+                
             </table>
             <h2 style="color:black">Nome da Observação: ${observation.nome}</h2>
             <hr>

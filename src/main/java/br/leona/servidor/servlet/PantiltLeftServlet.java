@@ -1,4 +1,5 @@
-package br.leona.servidor.controller;
+package br.leona.servidor.servlet;
+import br.leona.servidor.service.ObservacaoService;
 import br.leona.servidor.service.ObservacaoService;
 import java.io.IOException;
 import javax.servlet.ServletException;

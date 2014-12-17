@@ -46,50 +46,7 @@ public class ObservacaoController {
         indexController.paginaVisualizacaoObservacao(o);        
     }
     
-    /*@Post
-    @Path("/movimentaresquerda")    
-    public void movimentarEsquerda(PantIlt pantilt){
-        System.out.println("Graus: "+pantilt.getGraus());
-        obsService.movimentar(pantilt,"L");                
-    }
-    
-    @Post
-    @Path("/movimentardireita")    
-    public void movimentarDireita(PantIlt p){
-        System.out.println("Graus: "+p.getGraus());
-        int m = obsService.movimentar(p,"R");
-        
-        if (m==1){
-            result.forwardTo("WEB-INF/jsp/index/pantilt.jsp");
-        }else{
-            System.out.println("Não Moveu para Esquerda");
-        }
-    }
-    @Post
-    @Path("/movimentarcima")    
-    public void movimentarCima(PantIlt p){
-        System.out.println("Graus: "+p.getGraus());
-        int m = obsService.movimentar(p,"U");
-        
-        if (m==1){
-            result.forwardTo("WEB-INF/jsp/index/pantilt.jsp");
-        }else{
-            System.out.println("Não Moveu para Esquerda");
-        }
-    }
-    
-    @Post
-    @Path("/movimentarbaixa")    
-    public void movimentarBaixa(PantIlt p){
-        System.out.println("Graus: "+p.getGraus());
-        int m = obsService.movimentar(p,"D");
-        
-        if (m==1){
-            result.forwardTo("WEB-INF/jsp/index/pantilt.jsp");
-        }else{
-            System.out.println("Não Moveu para Esquerda");
-        }
-    }
+    /*
     
     @Post
     @Path("/movimentarreset")    

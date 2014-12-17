@@ -2,6 +2,7 @@ package br.leona.servidor.service;
 
 import br.leona.server.dao.ConsultasEstacaoDao;
 import br.leona.server.model.Estacao;
+import br.leona.server.model.Servico;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -85,5 +86,9 @@ public class EstacaoService {
 
     public void editar(Estacao e) {
         dao.save(e);
+    }
+
+    public List<Servico> listaServicos() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

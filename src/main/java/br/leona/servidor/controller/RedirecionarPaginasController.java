@@ -21,13 +21,12 @@ public class RedirecionarPaginasController {
     //region Estação
     public static final String LISTAGEM_ESTACAO = webinf+"estacao/lista.jsp";
     public static final String CADASTRO_ESTACAO = webinf+"estacao/cadastro.jsp";
+    public static final String LISTAGEM_SERVICOS = webinf+"estacao/servicos.jsp";
     //endregion
     
     //region Observação
     public static final String LISTAGEM_OBSERVACAO = webinf+"observacao/lista.jsp";
     public static final String CADASTRO_OBSERVACAO = webinf+"observacao/cadastro.jsp";
-    //endregion
     public static final String VISUALIZAR_OBSERVACAO = webinf+"observacao/visualizar.jsp";
-    
-
+    //endregion    
 }

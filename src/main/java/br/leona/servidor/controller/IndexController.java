@@ -5,14 +5,19 @@ import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
 import br.leona.server.model.Estacao;
 import br.leona.server.model.Observacao;
+import br.leona.server.model.Servico;
 import br.leona.server.model.Usuario;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import javax.servlet.http.HttpSession;
 //import br.leona.basico.model.Usuario;
 
 @Resource
 public class IndexController {
     
     private Result result;
+    private HttpServletRequest request;
     
     public IndexController(Result r){
         this.result = r;
@@ -79,6 +84,13 @@ public class IndexController {
     public void paginaCadastroEstacao(){
         result.forwardTo(RedirecionarPaginasController.CADASTRO_ESTACAO);
     }
+    @Path("/servicosEstacao")
+    public void paginaServicosEstacao(){
+        EstacaoController e = new EstacaoController(result);
+        Estacao es = new Estacao();
+        List<Servico> listS = e.listServicos(es);
+        result.forwardTo(RedirecionarPaginasController.LISTAGEM_SERVICOS);
+    }
     //endregion
     
     //region Observacao
@@ -98,8 +110,13 @@ public class IndexController {
 
     @Path("/visualizacaoObservacao")
     void paginaVisualizacaoObservacao(Observacao o) {
+        HttpSession session = request.getSession();
+        String azimute = (String) session.getAttribute("azimute");
+        String elevacao = (String) session.getAttribute("elevacao");
         result
                 .include("observation", o)
+                .include("positionazi", elevacao)
+                .include("positionele", azimute)
                 .forwardTo(RedirecionarPaginasController.VISUALIZAR_OBSERVACAO);
     }
     //endregion

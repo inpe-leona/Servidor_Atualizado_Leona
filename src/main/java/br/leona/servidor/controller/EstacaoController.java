@@ -5,6 +5,7 @@ import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.leona.server.model.Estacao;
+import br.leona.server.model.Servico;
 import br.leona.servidor.service.EstacaoService;
 import java.net.UnknownHostException;
 import java.util.List;
@@ -45,8 +46,10 @@ public class EstacaoController {
         Estacao e = estService.buscarEstacaoId(estacao);
         e.setStatus(estService.pingar(e.getIp()));
         estService.editar(e);
-        indexController.paginaListagemEstacao();
-        
+        indexController.paginaListagemEstacao();        
     }
-    
+
+    public List<Servico> listServicos(Estacao e) {
+        return estService.listaServicos();
+    }    
 }
