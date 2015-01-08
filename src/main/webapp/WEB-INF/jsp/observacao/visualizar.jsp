@@ -13,6 +13,26 @@
         </script>
         <script>
             $(document).ready(function () {
+                $('#iniciarGravacao').click(function (event) {
+                    var iniciarGravacao = $('#iniciarGravacao').val();
+                    $.get('PantiltGravacaoServlet', {variavel: 1}, function (responseText) {
+                        $('#welcometext').text(responseText);
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
+                $('#pararGravacao').click(function (event) {
+                    var iniciarGravacao = $('#pararGravacao').val();
+                    $.get('PantiltGravacaoServlet', {variavel: 0}, function (responseText) {
+                        $('#welcometext').text(responseText);
+                    });
+                });
+            });
+        </script>
+        <script>
+            $(document).ready(function () {
                 $('#azimute').click(function (event) {
                     var azimute = $('#azimuteGraus').val();
                     $.get('PantiltAzimuteServlet', {azimute: azimute}, function (responseText) {
@@ -247,13 +267,13 @@
 
                     </td>
                     <td align="center">
-
+                        <input type="button" id="iniciarGravacao" value="Iniciar Gravação"/>
                     </td>
                     <td align="center">
                         
                     </td>
                     <td align="center">
-
+                        <input type="button" id="pararGravacao" value="Parar Gravação"/>
                     </td>
                     <td align="center">
 

@@ -1,5 +1,6 @@
 package br.leona.servidor.controller;
 
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Resource;
@@ -7,7 +8,10 @@ import br.com.caelum.vraptor.Result;
 import br.leona.server.model.Estacao;
 import br.leona.server.model.Servico;
 import br.leona.servidor.service.EstacaoService;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.UnknownHostException;
+import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -52,4 +56,10 @@ public class EstacaoController {
     public List<Servico> listServicos(Estacao e) {
         return estService.listaServicos();
     }    
+    
+    @Get
+    @Path("/img")
+    public void salvarImagem() throws SQLException, FileNotFoundException, ClassNotFoundException, IOException{
+        estService.buscarImagem(null);    
+    }
 }

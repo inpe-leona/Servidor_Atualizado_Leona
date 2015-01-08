@@ -21,6 +21,9 @@
                         </li>
                         <li><a href="<c:url value='/contato'/>">Contato</a>
                         </li>
+                        <li><a href="<c:url value='/img'/>">Imagem</a>
+                        </li>
+                        
                     </ul>
                 </div>
             </div>

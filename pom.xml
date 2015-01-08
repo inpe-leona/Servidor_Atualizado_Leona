@@ -108,8 +108,13 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.11</version>
-        </dependency>       
-        
+        </dependency>
+        <dependency>
+            <groupId>net.vidageek</groupId>
+            <artifactId>mirror</artifactId>
+            <version>1.6.1</version>
+            <type>jar</type>
+        </dependency>
         <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-web-api</artifactId>
@@ -179,23 +184,6 @@
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>localhost_8080/Estacao_Leona/ControllerServices.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName></packageName>
-                            <wsdlLocation>http://localhost:8080/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/ControllerServices.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-ControllerServices</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                </executions>
                 <configuration>
                     <!-- Needed with JAXP 1.5 -->
                     <vmArgs>

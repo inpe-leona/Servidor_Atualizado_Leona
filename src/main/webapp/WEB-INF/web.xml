@@ -12,6 +12,10 @@
         <servlet-name>PantiltElevacaoServlet</servlet-name>
         <servlet-class>br.leona.servidor.servlet.PantiltElevacaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>PantiltGravacaoServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.PantiltGravacaoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PantiltLeftServlet</servlet-name>
         <url-pattern>/PantiltLeftServlet/*</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>PantiltElevacaoServlet</servlet-name>
         <url-pattern>/PantiltElevacaoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PantiltGravacaoServlet</servlet-name>
+        <url-pattern>/PantiltGravacaoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
