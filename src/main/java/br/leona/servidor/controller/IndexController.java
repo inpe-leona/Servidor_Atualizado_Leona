@@ -3,10 +3,15 @@ package br.leona.servidor.controller;
 import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Path;
 import br.com.caelum.vraptor.Result;
+import br.com.caelum.vraptor.interceptor.download.InputStreamDownload;
 import br.leona.server.model.Estacao;
 import br.leona.server.model.Observacao;
 import br.leona.server.model.Servico;
 import br.leona.server.model.Usuario;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -19,13 +24,15 @@ public class IndexController {
     private Result result;
     private HttpServletRequest request;
     
-    public IndexController(Result r){
+    public IndexController(Result r){        
         this.result = r;
     }
     
     //region Index
     @Path("/")
-    public void index(){}
+    public void index() throws FileNotFoundException{
+         
+    }
     
     @Path("/contato")
     public void paginaContato(){

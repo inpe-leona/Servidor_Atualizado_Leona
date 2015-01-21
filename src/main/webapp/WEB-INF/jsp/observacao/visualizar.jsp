@@ -9,12 +9,12 @@
         <meta name="author" content="An Xiao Mina and Elizabeth Gin" />
 
         <meta name="description" content="Tech Survey for Uganda" />
-<script src="http://code.jquery.com/jquery-latest.js">
+        <script src="http://code.jquery.com/jquery-latest.js">
         </script>
         <script>
             $(document).ready(function () {
                 $('#iniciarGravacao').click(function (event) {
-                    var iniciarGravacao = $('#iniciarGravacao').val();
+                    alert("oi");
                     $.get('PantiltGravacaoServlet', {variavel: 1}, function (responseText) {
                         $('#welcometext').text(responseText);
                     });

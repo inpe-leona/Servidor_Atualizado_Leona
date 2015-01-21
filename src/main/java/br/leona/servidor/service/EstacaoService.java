@@ -3,20 +3,19 @@ package br.leona.servidor.service;
 import br.leona.server.dao.ConsultasEstacaoDao;
 import br.leona.server.model.Estacao;
 import br.leona.server.model.Servico;
-import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.UnknownHostException;
 import java.sql.*; 
 import java.util.List;
 import javax.imageio.ImageIO;
+import javax.imageio.stream.ImageOutputStream;
 import org.esfinge.querybuilder.QueryBuilder;
-import org.hibernate.connection.DriverManagerConnectionProvider;
 
 public class EstacaoService {
 
@@ -44,28 +43,46 @@ public class EstacaoService {
     }
 
     public String buscarImagem(Estacao estacao) throws MalformedURLException, IOException, SQLException, FileNotFoundException, ClassNotFoundException{
+              
+        salvarImagem2("C:\\data\\node.png");
         
-        try{
-            /*java.net.URL url = new URL("https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/10645207_1546719082218097_3828434421908380376_n.jpg?oh=959b78a473dfd327d0b2f9cb0cfc11ec&oe=553A600D&__gda__=1429186663_fd62d5590f96bb97c7541fd2a162d1a1");
-            Image imagem = ImageIO.read(url);   */
-            
-        }catch(Exception e){
-            
-        }        
-        salvarImagem("http://www.ufla.br/ascom/wp-content/uploads/2012/01/20.01-logoTesteAnpad.jpg");
         return "ok";
     }
-    
+    public String salvarImagem2(String caminho) throws SQLException, FileNotFoundException, ClassNotFoundException, IOException {
+        boolean retorno = true;
+        Connection con = getConexao();
+        try {
+             // retrieve image            
+            File outputfile = new File("C:\\data\\node.png");
+            File a = new File("C:\\");
+            BufferedImage bi = ImageIO.read(a);      
+            ImageIO.write(bi, "png", outputfile);
+            
+            /*BufferedImage image = ImageIO.read(new File(caminho));      
+            System.out.println("1");
+            File img = new File(caminho);     
+            System.out.println("2");
+            ImageIO.write(image, "C:\\Users\\Nicolas Leona\\Desktop", img);
+            System.out.println("3");
+            System.out.println(img);*/
+        } catch (IOException e) {
+        
+        }
+        
+
+        return "oi";
+    }
     public String salvarImagem(String caminho) throws SQLException, FileNotFoundException, ClassNotFoundException{
         boolean retorno = true;  
          Connection con = getConexao();
             try{  
                 File img = new File(caminho);  
+                System.out.println("Pegou Caminho");
                 FileInputStream inputStream = new FileInputStream(img);  
                 PreparedStatement pstm = con.prepareStatement("INSERT INTO img(imagem)" +  
                         "VALUE(?)");  
                 pstm.setBinaryStream(1, inputStream,(int)img.length());  
-                  
+                System.out.println("Marcou a String");
                 pstm.execute();  
             }catch(SQLException sqle){  
                 sqle.printStackTrace();  
