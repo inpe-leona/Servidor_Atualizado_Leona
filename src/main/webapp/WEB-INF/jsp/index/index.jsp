@@ -16,13 +16,13 @@
                     <ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a>
                         </li>
-                        <li><a href="<c:url value='/cadastroUsuario'/>">Cadastrar</a></li>
-                        <li><a href="<c:url value='/login'/>">Login</a>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>
+                        <!--<li><a href="<c:url value='/login'/>">Login</a>
                         </li>
                         <li><a href="<c:url value='/contato'/>">Contato</a>
                         </li>
                         <li><a href="<c:url value='/img'/>">Imagem</a>
-                        </li>
+                        </li>-->
                         
                     </ul>
                 </div>
@@ -56,8 +56,6 @@
                     <p align="justify">Como resultado do projeto como um todo espera-se a obtenção de um largo conjunto de dados de sprites e outros Eventos Luminosos Transientes (ELTs) ocorridos sobre o Brasil e outros países da América Latina. Os dados permitirão um mapeamento da ocorrência de ELTs na região de observação e de sua sazonalidade. Com esse conjunto de dados diversos estudos científicos poderão ser feitos, por exemplo: (A) Distribuição de ELTs na região sul do país num raio de 800 km do sítio de observação; (B) Estudos das características dos ELTs na região de observação e das características das tempestades geradoras; (C) Estudo comparativo de tempestades geradoras e não-geradoras de ELTs. Também espera-se uma melhor divulgação para a comunidade científica, e para a população de um modo geral, dos trabalhos de pesquisa realizados nessa nova área dentro do INPE. Espera-se o desenvolvimento de um software que execute em um servidor do INPE para o gerenciamento e armazenamento das informações das observações de fenômenos realizadas. A partir desse software deve ser possível o controle das câmeras nas estações remotas, o acompanhamento em tempo real dos fenômenos e o gerenciamento dos dados científicos associados. A partir dessas informações, os pesquisadores terão condições de ter acesso aos dados de observação para estudar esses fenômenos.</p>
                 </div>
             </div>
-            <a href="<c:url value='/pantilt'/>">Movimentar Pant Ilt</a>        
-            <hr>
             <footer>
                 <div class="row">
                     <div class="col-lg-12">
@@ -67,12 +65,6 @@
             </footer>
         </div>
         <script src="<c:url value="./resources/js/jquery-1.10.2.js"/>"></script>
-        <script src="<c:url value="./resources/js/bootstrap.js"/>"></script>
-        <script>
-            $('.carousel').carousel({
-                interval: 5000
-            })
-        </script>
-        
+        <script src="<c:url value="./resources/js/bootstrap.js"/>"></script>               
     </body>
 </html>

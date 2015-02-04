@@ -123,4 +123,12 @@ public class IndexController {
                 .forwardTo(RedirecionarPaginasController.VISUALIZAR_OBSERVACAO);
     }
     //endregion
+    
+    ////////////////////////////////// Novos Métodos
+    @Path("/imagem")
+    public void paginaGestaoImagens(){
+        result
+                .forwardTo(RedirecionarPaginasController.GESTAO_IMAGEM);
+    }
+    
 }

@@ -29,4 +29,9 @@ public class RedirecionarPaginasController {
     public static final String CADASTRO_OBSERVACAO = webinf+"observacao/cadastro.jsp";
     public static final String VISUALIZAR_OBSERVACAO = webinf+"observacao/visualizar.jsp";
     //endregion    
+    
+    //region Imagem
+    static String GESTAO_IMAGEM = webinf+"imagem/imagem.jsp";
+    
+    //endregion
 }
