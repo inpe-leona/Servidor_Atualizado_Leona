@@ -16,6 +16,12 @@
                 $('#pararGravacao').click(function (event) {
                     $.get('PararGravacaoServlet', function (responseText) {});
                 });
+                $('#ligarCamera').click(function (event) {
+                    $.get('LigarCameraServlet', function (responseText) {});
+                });
+                $('#desligarCamera').click(function (event) {
+                    $.get('DesligarCameraServlet', function (responseText) {});
+                });
             });
         </script>       
     </head>
@@ -27,13 +33,6 @@
                         <li><a href="<c:url value='/'/>">Inicio</a>
                         </li>
                         <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>
-                        <!--<li><a href="<c:url value='/login'/>">Login</a>
-                        </li>
-                        <li><a href="<c:url value='/contato'/>">Contato</a>
-                        </li>
-                        <li><a href="<c:url value='/img'/>">Imagem</a>
-                        </li>-->
-
                     </ul>
                 </div>
             </div>
@@ -44,12 +43,22 @@
         <h1 align="center">Gestão de Imagem</h1>
         <hr/>
         <div id="body" class="container">
+            <hr/>
             <div class="col-md-6" align="center">
-                <input type="button" id="iniciarGravacao" class="btn btn-info" value="Iniciar Gravação"/>
+                <input type="button" id="ligarCamera" class="btn btn-info" value="Ligar Camera"/>
             </div>
             <div class="col-md-6" align="center">
-                <input type="button" id="pararGravacao" class="btn btn-info" value="Parar Gravação"/>
-            </div>            
+                <input type="button" id="desligarCamera" class="btn btn-info" value="Desligar Camera"/>
+            </div>
+            <hr/>
+            <div class="col-md-6" align="center">
+                <input type="button" id="iniciarGravacao" class="btn btn-info" value="Iniciar Captura"/>
+            </div>
+            <div class="col-md-6" align="center">
+                <input type="button" id="pararGravacao" class="btn btn-info" value="Parar Captura"/>
+            </div>
+            <hr/>
+            
         </div>
 
         <br/><br/>

@@ -24,6 +24,22 @@
         <servlet-name>PararGravacaoServlet</servlet-name>
         <servlet-class>br.leona.servidor.servlet.PararGravacaoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LigarCameraServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.LigarCameraServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DesligarCameraServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.DesligarCameraServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IniciarVideoServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.IniciarVideoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PararVideoServlet</servlet-name>
+        <servlet-class>br.leona.servidor.servlet.PararVideoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>PantiltLeftServlet</servlet-name>
         <url-pattern>/PantiltLeftServlet/*</url-pattern>
@@ -79,6 +95,22 @@
     <servlet-mapping>
         <servlet-name>PararGravacaoServlet</servlet-name>
         <url-pattern>/PararGravacaoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LigarCameraServlet</servlet-name>
+        <url-pattern>/LigarCameraServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DesligarCameraServlet</servlet-name>
+        <url-pattern>/DesligarCameraServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IniciarVideoServlet</servlet-name>
+        <url-pattern>/IniciarVideoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PararVideoServlet</servlet-name>
+        <url-pattern>/PararVideoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
