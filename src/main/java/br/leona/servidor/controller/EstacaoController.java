@@ -28,6 +28,16 @@ public class EstacaoController {
         this.result = r;
     }
     
+    @Get
+    @Path("buscarEstacao")
+    public Estacao buscarEstacao(){
+        Estacao estacao = new Estacao();
+        estacao.setIp("150.163.46.137");
+        return estService.buscarEstacaoId(estacao);
+    }
+    
+    
+    //////////////ANTIGOS
     public List<Estacao> listaEstacoes(){
         return estService.listaEstacoes();
     }

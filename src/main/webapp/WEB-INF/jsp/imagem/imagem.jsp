@@ -22,6 +22,9 @@
                 $('#desligarCamera').click(function (event) {
                     $.get('DesligarCameraServlet', function (responseText) {});
                 });
+                $('#buscarImagem').click(function (event) {
+                    $.get('BuscarImagemServlet', function (responseText) {});
+                });
             });
         </script>       
     </head>
@@ -58,7 +61,9 @@
                 <input type="button" id="pararGravacao" class="btn btn-info" value="Parar Captura"/>
             </div>
             <hr/>
-            
+            <div class="col-md-6" align="center">
+                <input type="button" id="buscarImagem" class="btn btn-info" value="Salvar Imagens"/>
+            </div>
         </div>
 
         <br/><br/>
