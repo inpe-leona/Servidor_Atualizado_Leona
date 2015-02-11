@@ -76,22 +76,19 @@ public class ImagemService {
         FTPClient f = new FTPClient();
         f.connect("150.163.46.137");
         f.login("nicolas", "nicolas");        
-        FTPFile[] files = f.listFiles();        
+        FTPFile[] files = f.listFiles("/ProjetoLeona");        
         System.out.println("Pegou arquivos: " + files.length);
-        FTPFile[] files2 = f.listFiles("/ProjetoLeona");        
-        System.out.println("Pegou arquivos: " + files2.length);
-        FTPFile[] files3 = f.listFiles("/Evento_05022015_162229");        
-        System.out.println("Pegou arquivos: " + files3.length);
         for (int i = 0; i < files.length; i++) {            
-            if (i > 1) {
-                File fa = new File("C:/receiver/ftproot/ProjetoLeona/"+files[i].getName());
+            if (i > 0) {
+                File fa = new File("C:/receiver/ProjetoLeona/"+files[i].getName());
+                System.out.println("nome do arquivo criado: "+fa.getName());
                 if (fa.mkdir()){                      
-                    FTPFile[] pastaEvento = f.listFiles("/ftproot/ProjetoLeona/"+files[i].getName());
+                    FTPFile[] pastaEvento = f.listFiles("/ProjetoLeona/"+files[i].getName());
                     System.out.println("Criou: "+pastaEvento.length);
                     for (int j = 2; j< pastaEvento.length; j++){
                         System.out.println("Arquivos: "+pastaEvento[j].getName());
                         String pathLocal = "C:/receiver";                
-                        String stringUrl = "ftp://nicolas:nicolas@150.163.46.208/ftproot/ProjetoLeona/"+files[i].getName()+"/"+pastaEvento[j].getName();
+                        String stringUrl = "ftp://nicolas:nicolas@150.163.46.137/ProjetoLeona/"+files[i].getName()+"/"+pastaEvento[j].getName();
                         URL url = new URL(stringUrl);
                         String nomeArquivoLocal = url.getFile();
                         InputStream is = url.openStream();
@@ -104,7 +101,7 @@ public class ImagemService {
                         is.close();
                         fos.close();
                     }
-                    JOptionPane.showMessageDialog(null,"Imagens Coletadas");
+                    System.out.println("Imagens Coletadas");
                 }else{
                     System.out.println("nao criou");
                 }
