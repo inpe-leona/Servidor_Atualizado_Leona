@@ -53,7 +53,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Estações</th>
+                        <th>Estação</th>
                         <th>Inicio</th>
                         <th>Fim</th>
                     </tr>
@@ -62,9 +62,9 @@
                     <c:forEach items="${observacaoList}" var="item">
                         <tr>
                             <td>${item.nome}</td>
-                            <td>${item.estacoes}</td>
-                            <td>${item.dataHoraInicio}</td>
-                            <td>${item.dataHoraFim}</td>
+                            <td>${item.estacao}</td>
+                            <td>${item.dataInicio} - ${item.horaInicio}</td>
+                            <td>${item.dataFim} - ${item.horaFim}</td>
                             <td>
                                 <form action="<c:url value='/verObservacao'/>" method="post">
                                     <input type='hidden' name='_method' value='post'/>

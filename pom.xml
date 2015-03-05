@@ -21,13 +21,6 @@
             <artifactId>commons-net</artifactId>
             <version>2.0</version>
         </dependency>
-
-        
-        <dependency>  
-            <groupId>br.leona</groupId>  
-            <artifactId>Leona_Basic</artifactId>  
-            <version>1.0</version>  
-        </dependency>  
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
@@ -35,8 +28,8 @@
         </dependency>
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.0-api</artifactId>
-            <version>1.0.1.Final</version>
+            <artifactId>hibernate-jpa-2.1-api</artifactId>
+            <version>1.0.0.Final</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -52,6 +45,11 @@
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>javax.persistence</artifactId>
             <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>org.eclipse.persistence.jpa.jpql</artifactId>
+            <version>2.5.1</version>
         </dependency>
          <dependency>
             <groupId>org.esfinge.querybuilder</groupId>
@@ -77,22 +75,16 @@
             <groupId>br.com.caelum</groupId>
             <artifactId>vraptor</artifactId>
             <version>3.5.0</version>
-        </dependency>
-        
+        </dependency>        
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.0.8</version>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.1.0</version>
-        </dependency>
+        </dependency>        
         <dependency>
             <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.0.Final</version>
+            <artifactId>hibernate-jpa-2.0-api</artifactId>
+            <version>1.0.1.Final</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
@@ -201,5 +193,26 @@
             
         </plugins>
     </build>
+    <repositories>
+		    <!--
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    
+                    <repository>
+                        <id>local</id>
+                        <name>local</name>
+                        <url>C:\LeonaServer\apache-maven-3.2.1\rep\repository</url>
+                    </repository>	
+        -->
+        <repository>
+            <id>repox</id>
+            <name>Qualquer</name>
+            <url>C:/Users/Nicolas Leona/.m2/repository/</url>
+        </repository>
+        
+    </repositories>
 
 </project>

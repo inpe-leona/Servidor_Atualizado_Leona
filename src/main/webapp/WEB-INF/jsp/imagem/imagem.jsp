@@ -11,19 +11,24 @@
         <script>
             $(document).ready(function () {
                 $('#iniciarGravacao').click(function (event) {
-                    $.get('IniciarGravacaoServlet', function (responseText) {});
+                    $.get('IniciarGravacaoServlet', function (responseText) {
+                    });
                 });
                 $('#pararGravacao').click(function (event) {
-                    $.get('PararGravacaoServlet', function (responseText) {});
+                    $.get('PararGravacaoServlet', function (responseText) {
+                    });
                 });
                 $('#ligarCamera').click(function (event) {
-                    $.get('LigarCameraServlet', function (responseText) {});
+                    $.get('LigarCameraServlet', function (responseText) {
+                    });
                 });
                 $('#desligarCamera').click(function (event) {
-                    $.get('DesligarCameraServlet', function (responseText) {});
+                    $.get('DesligarCameraServlet', function (responseText) {
+                    });
                 });
                 $('#buscarImagem').click(function (event) {
-                    $.get('BuscarImagemServlet', function (responseText) {});
+                    $.get('BuscarImagemServlet', function (responseText) {
+                    });
                 });
             });
         </script>       
@@ -33,9 +38,9 @@
             <div class="container">
                 <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a>
-                        </li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>
+                        <li><a href="<c:url value='/'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
                     </ul>
                 </div>
             </div>
@@ -63,6 +68,9 @@
             <hr/>
             <div class="col-md-6" align="center">
                 <input type="button" id="buscarImagem" class="btn btn-info" value="Salvar Imagens"/>
+            </div>
+            <div class="col-md-6" align="center">
+                <a href="<c:url value='/listaObservacoes'/>"><input type="button" class="btn btn-info" value="Ver Imagens"/></a>
             </div>
         </div>
 

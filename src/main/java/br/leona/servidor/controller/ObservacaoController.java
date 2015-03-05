@@ -9,6 +9,8 @@ import br.com.caelum.vraptor.Result;
 import br.leona.server.model.Observacao;
 import br.leona.servidor.service.ObservacaoService;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.swing.JOptionPane;
 
 @Resource
@@ -18,20 +20,33 @@ public class ObservacaoController {
     private IndexController indexController;
     private PantIlt p;
     private Result result;
+    private HttpServletRequest request;
     
-    public ObservacaoController(Result result){
+    public ObservacaoController(Result result, HttpServletRequest request){
         this.obsService = new ObservacaoService();
         this.indexController = new IndexController(result);
         this.p = new PantIlt();
         this.result = result;
+        this.request = request;
     }
     
+    
+    @Get
+    @Path("listaObservacoes")
+    public void listaObservacoes(){
+        List<Observacao> listO = obsService.listObservacoes();
+        indexController.paginaPastaImagem(listO);
+    }
+    ///////////////Antigos
     @Post
     @Path("/cadastrarObservacao")
     public void cadastrarObservacao(Observacao observacao){
+        System.out.println(observacao.getEstacao());
+        System.out.println("Cadastrar Controller");
         String resposta = obsService.cadastrar(observacao);        
         if (resposta == "OK"){
-            indexController.paginaListagemObservacao();
+            indexController.paginaMensagemOkObservacao();
+            //indexController.paginaListagemObservacao();
         }else{
             JOptionPane.showMessageDialog(null, resposta);
             indexController.paginaCadastroObservacao();
@@ -41,8 +56,11 @@ public class ObservacaoController {
     @Post
     @Path("/verObservacao")
     public void verObservacao(Observacao observacao){
+        HttpSession session = request.getSession();
+        session.setAttribute("obs", observacao);
         System.out.println("Veio Aqui");
         Observacao o = obsService.buscarObservacao(observacao);
+        
         indexController.paginaVisualizacaoObservacao(o);        
     }
     

@@ -6,12 +6,14 @@
     <class>br.leona.server.model.Estacao</class>
     <class>br.leona.server.model.Servico</class>
     <class>br.leona.server.model.Observacao</class>
+    <class>br.leona.server.model.Log</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/leona?zeroDateTimeBehavior=convertToNull"/>
       <property name="javax.persistence.jdbc.user" value="root"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="root"/>
-      <property name="javax.persistence.schema-generation.database.action" value="none"/>
+      <!--<property name="javax.persistence.schema-generation.database.action" value="none"/>-->
+      <property name="javax.persistence.schema-generation.database.action" value="create-or-extend-tables"/>
     </properties>
   </persistence-unit>
 </persistence>

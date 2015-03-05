@@ -2,33 +2,25 @@
 
 <xs:element name="CannotRealizeException" type="tns:CannotRealizeException"/>
 
+<xs:element name="DesligarCamera" type="tns:DesligarCamera"/>
+
+<xs:element name="DesligarCameraResponse" type="tns:DesligarCameraResponse"/>
+
 <xs:element name="IOException" type="tns:IOException"/>
 
 <xs:element name="IniciarCaptura" type="tns:IniciarCaptura"/>
 
 <xs:element name="IniciarCapturaResponse" type="tns:IniciarCapturaResponse"/>
 
+<xs:element name="IniciarTransmissao" type="tns:IniciarTransmissao"/>
+
+<xs:element name="IniciarTransmissaoResponse" type="tns:IniciarTransmissaoResponse"/>
+
 <xs:element name="InterruptedException" type="tns:InterruptedException"/>
 
-<xs:element name="LigarDesligarCamera" type="tns:LigarDesligarCamera"/>
+<xs:element name="LigarCamera" type="tns:LigarCamera"/>
 
-<xs:element name="LigarDesligarCameraResponse" type="tns:LigarDesligarCameraResponse"/>
-
-<xs:element name="MoverBaixo" type="tns:MoverBaixo"/>
-
-<xs:element name="MoverBaixoResponse" type="tns:MoverBaixoResponse"/>
-
-<xs:element name="MoverCima" type="tns:MoverCima"/>
-
-<xs:element name="MoverCimaResponse" type="tns:MoverCimaResponse"/>
-
-<xs:element name="MoverDireita" type="tns:MoverDireita"/>
-
-<xs:element name="MoverDireitaResponse" type="tns:MoverDireitaResponse"/>
-
-<xs:element name="MoverEsquerda" type="tns:MoverEsquerda"/>
-
-<xs:element name="MoverEsquerdaResponse" type="tns:MoverEsquerdaResponse"/>
+<xs:element name="LigarCameraResponse" type="tns:LigarCameraResponse"/>
 
 <xs:element name="NoPlayerException" type="tns:NoPlayerException"/>
 
@@ -36,9 +28,21 @@
 
 <xs:element name="PararCapturaResponse" type="tns:PararCapturaResponse"/>
 
+<xs:element name="PararTransmissao" type="tns:PararTransmissao"/>
+
+<xs:element name="PararTransmissaoResponse" type="tns:PararTransmissaoResponse"/>
+
 <xs:element name="ResetPantilt" type="tns:ResetPantilt"/>
 
 <xs:element name="ResetPantiltResponse" type="tns:ResetPantiltResponse"/>
+
+<xs:element name="desligarPantilt" type="tns:desligarPantilt"/>
+
+<xs:element name="desligarPantiltResponse" type="tns:desligarPantiltResponse"/>
+
+<xs:element name="iniciarVideo" type="tns:iniciarVideo"/>
+
+<xs:element name="iniciarVideoResponse" type="tns:iniciarVideoResponse"/>
 
 <xs:element name="moverAzimute" type="tns:moverAzimute"/>
 
@@ -58,28 +62,28 @@
 
 <xs:element name="servico" type="tns:servico"/>
 
-<xs:complexType name="moverAzimute">
-<xs:sequence>
-<xs:element name="graus" type="xs:int"/>
-</xs:sequence>
+<xs:complexType name="PararTransmissao">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="moverAzimuteResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="PararTransmissaoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="iniciarVideo">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="iniciarVideoResponse">
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="IniciarCaptura">
-<xs:sequence>
-<xs:element name="capturarImagens" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="IniciarCapturaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="IOException">
@@ -100,104 +104,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="MoverEsquerda">
-<xs:sequence>
-<xs:element name="graus" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MoverEsquerdaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="InterruptedException">
-<xs:sequence>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MoverCima">
-<xs:sequence>
-<xs:element name="graus" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MoverCimaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="moverElevacao">
-<xs:sequence>
-<xs:element name="graus" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="moverElevacaoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="retornarNomesFotos">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="retornarNomesFotosResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="PararCaptura">
-<xs:sequence>
-<xs:element name="status" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="PararCapturaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MoverDireita">
-<xs:sequence>
-<xs:element name="graus" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MoverDireitaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ResetPantilt">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="ResetPantiltResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="LigarDesligarCamera">
-<xs:sequence>
-<xs:element name="valor" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="LigarDesligarCameraResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="retornarListaStatus">
 <xs:sequence/>
 </xs:complexType>
@@ -215,15 +121,99 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="MoverBaixo">
+<xs:complexType name="moverAzimute">
 <xs:sequence>
 <xs:element name="graus" type="xs:int"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="MoverBaixoResponse">
+<xs:complexType name="moverAzimuteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="LigarCamera">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="LigarCameraResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="IniciarTransmissao">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="IniciarTransmissaoResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="moverElevacao">
+<xs:sequence>
+<xs:element name="graus" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="moverElevacaoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DesligarCamera">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DesligarCameraResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="PararCaptura">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="PararCapturaResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="retornarNomesFotos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="retornarNomesFotosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="desligarPantilt">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="desligarPantiltResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ResetPantilt">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="ResetPantiltResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="InterruptedException">
+<xs:sequence>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

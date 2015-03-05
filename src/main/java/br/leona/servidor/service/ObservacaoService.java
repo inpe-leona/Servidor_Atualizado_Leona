@@ -1,21 +1,25 @@
 package br.leona.servidor.service;
 
-import br.leona.server.dao.ConsultasEstacaoDao;
+import br.com.caelum.vraptor.ioc.Component;
+import br.leona.server.dao.ConsultasLogDao;
 import br.leona.server.dao.ConsultasObservacaoDao;
+import br.leona.server.model.Log;
 import br.leona.server.model.Observacao;
-import br.leona.servidor.mocks.PantIlt;
+import java.io.Serializable;
 import java.util.List;
 import org.esfinge.querybuilder.QueryBuilder;
 
-public class ObservacaoService {
+@Component
+public class ObservacaoService implements Serializable{
     
     ConsultasObservacaoDao dao = QueryBuilder.create(ConsultasObservacaoDao.class);
+    ConsultasLogDao log = QueryBuilder.create(ConsultasLogDao.class);
 
     public int movimentar(int p, String l) {
         System.out.println("Graus: "+p);
         int r = 0;
         if (l == "azimute"){
-            
+             
             /*try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
@@ -64,12 +68,27 @@ public class ObservacaoService {
     }
 
     public String cadastrar(Observacao observacao) {
-        String resposta = "";
-        dao.save(observacao);
-        resposta = "OK";
+        String resposta = validarCampos(observacao);
+        System.out.println("Resposta: "+resposta);
+        if (resposta == ""){
+            dao.save(observacao);    
+            resposta = "OK";
+        }
         return resposta;
     }
-
+    
+    private String validarCampos(Observacao observacao) {  
+        System.out.println(observacao.getEstacao());
+        System.out.println(observacao.getDataInicio());
+        System.out.println(observacao.getHoraFim());
+        System.out.println(observacao.getHoraInicio());
+        if ((observacao.getDataFim() == null)||(observacao.getNome() == null)||(observacao.getDataInicio() == null)||(observacao.getEstacao()== null)||(observacao.getHoraFim() == null)||(observacao.getHoraInicio() == null)){
+            return "Campos Obrigatórios em Branco";
+        }else{
+            return "";
+        }
+    }
+    
     public List<Observacao> listObservacoes() {
         return dao.list();
     }
@@ -85,5 +104,16 @@ public class ObservacaoService {
             //pausa gravacao
         }
     }
+    
+    public void salvarLog(String id, String nome, String movimentacao, int graus) {
+        Log l = new Log();
+        l.setAcao("Movimentou "+movimentacao+" em "+graus+" graus");
+        l.setIdObservacao(id);
+        l.setNomeObservacao(nome);
+        l.setUsuario("Nicolas");//Colocar a sessão de usuario logado aqui
+        log.save(l);
+    }
+
+    
     
 }

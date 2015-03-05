@@ -32,6 +32,12 @@ public class RedirecionarPaginasController {
     
     //region Imagem
     static String GESTAO_IMAGEM = webinf+"imagem/imagem.jsp";
-    
+    static String PASTAIMAGEM = webinf+"imagem/pastaImagem.jsp";
+    static String IMAGENSOBS = webinf+"imagem/imagensObservacao.jsp";
     //endregion
+    
+    
+    static String GESTAO_OBSERVACAO = webinf+"observacao/observacao.jsp";
+    static String CADASTRO_OBSERVACAO_OK = webinf+"observacao/okobservacao.jsp";
+    
 }
