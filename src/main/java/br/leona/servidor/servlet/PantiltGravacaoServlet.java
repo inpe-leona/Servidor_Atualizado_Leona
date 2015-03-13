@@ -24,7 +24,7 @@ public class PantiltGravacaoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("veio no servlet");
         
-        obsService.gravar(Integer.parseInt(request.getParameter("azimute")));
+        //obsService.gravar(Integer.parseInt(request.getParameter("azimute")));
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

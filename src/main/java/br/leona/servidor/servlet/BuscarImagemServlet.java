@@ -3,6 +3,9 @@ package br.leona.servidor.servlet;
 import br.leona.servidor.service.ImagemService;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.ParseException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +38,11 @@ public class BuscarImagemServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        imgService.buscarImagens();
+        try {
+            imgService.buscarImagens();
+        } catch (ParseException ex) {
+            Logger.getLogger(BuscarImagemServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
     @Override

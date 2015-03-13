@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -44,8 +45,8 @@ public class ImagemService {
         }*/
         System.out.println("Parou Gravação");
     }
-
-    public void ligarCamera() {
+    
+    public void ligarCamera()  {
         /*try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
@@ -75,7 +76,7 @@ public class ImagemService {
         return dao.getEstacaoByIp(ip);
     }
 
-    public void buscarImagens() throws IOException {
+    public void buscarImagens() throws IOException, ParseException {
         FTPClient f = new FTPClient();
         f.connect("150.163.46.137");
         f.login("nicolas", "nicolas");

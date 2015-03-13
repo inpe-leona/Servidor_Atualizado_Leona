@@ -8,6 +8,7 @@ import br.com.caelum.vraptor.Resource;
 import br.com.caelum.vraptor.Result;
 import br.leona.server.model.Observacao;
 import br.leona.servidor.service.ObservacaoService;
+import java.text.ParseException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -40,7 +41,7 @@ public class ObservacaoController {
     ///////////////Antigos
     @Post
     @Path("/cadastrarObservacao")
-    public void cadastrarObservacao(Observacao observacao){
+    public void cadastrarObservacao(Observacao observacao) throws ParseException{
         System.out.println(observacao.getEstacao());
         System.out.println("Cadastrar Controller");
         String resposta = obsService.cadastrar(observacao);        
