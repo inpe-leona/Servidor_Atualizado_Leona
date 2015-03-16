@@ -82,7 +82,7 @@ public class ObservacaoService implements Serializable{
         System.out.println("Resposta: "+resposta);
         if (resposta == ""){
             dao.save(observacao);   
-            agendarStatusObservacao(observacao);
+            agendarLigarDesligarCamera(observacao);
             resposta = "OK";
         }
         return resposta;
@@ -122,15 +122,17 @@ public class ObservacaoService implements Serializable{
     }
     
     public int agendarLigarDesligarCamera(Observacao obs) throws ParseException{
-        String dataInicial = obs.getDataInicio() + " "+obs.getHoraInicio();        //Colocar no formato
-        String dataFinal = obs.getDataFim() + " "+obs.getHoraFim();      
+        String dataInicial = obs.getDataInicio() + " "+obs.getHoraInicio()+":00";        //Colocar no formato
+        String dataFinal = obs.getDataFim() + " "+obs.getHoraFim()+":00";      
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
         Date dateI = null;  
         dateI = df.parse(dataInicial); 
+        System.out.println("D: "+dateI);
         Date dateF = null;  
         dateF = df.parse(dataFinal); 
         
         try {
+            System.out.println("Ligar");
             SchedulerFactory schedFact = new StdSchedulerFactory();
             Scheduler sched = schedFact.getScheduler();
             sched.start();
@@ -149,16 +151,17 @@ public class ObservacaoService implements Serializable{
             e.printStackTrace();
         }
         
-        try {
+         try {
+            System.out.println("Desligar");
             SchedulerFactory schedFact = new StdSchedulerFactory();
             Scheduler sched = schedFact.getScheduler();
             sched.start();
             JobDetail job = JobBuilder.newJob(DesligarCamera.class)
-                .withIdentity("newJob", "group1")
+                .withIdentity("newJob", "group2")
                 .build();
             Trigger triggerInicial = TriggerBuilder
                 .newTrigger()
-                .withIdentity("newTrigger", "group1")
+                .withIdentity("newTrigger", "group2")
                 .startAt(dateF)
                 //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
                 .build();

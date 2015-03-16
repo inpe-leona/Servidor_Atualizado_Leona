@@ -22,7 +22,7 @@ Any value defined here will override the pom.xml file value but is only applicab
         <org-netbeans-modules-css-prep.less_2e_compiler_2e_options/>
         <org-netbeans-modules-css-prep.sass_2e_mappings>/scss:/css</org-netbeans-modules-css-prep.sass_2e_mappings>
         <org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>resources/js</org-netbeans-modules-web-clientproject-api.js_2e_libs_2e_folder>
-        <org-netbeans-modules-maven-jaxws._5f_C_5f_ControllerServices>http://150.163.46.138:8080/Estacao_Leona/ControllerServices?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ControllerServices>
+        <org-netbeans-modules-maven-jaxws._5f_C_5f_ControllerServices>http://150.163.46.137:8084/Estacao_Leona/ControllerServices?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_ControllerServices>
         <org-netbeans-modules-maven-jaxws._5f_C_5f_nic>http://localhost:8084/test/nic?wsdl</org-netbeans-modules-maven-jaxws._5f_C_5f_nic>
     </properties>
 </project-shared-configuration>

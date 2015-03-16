@@ -21,54 +21,56 @@ public class ImagemService {
     ConsultasEstacaoDao dao = QueryBuilder.create(ConsultasEstacaoDao.class);
 
     public void iniciarGravacao() {
-       /* try { // Call Web Service Operation
-
+        
+        try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
-
             port.iniciarCaptura();
         } catch (Exception ex) {
-            System.out.println("Erro ao iniciar gravação: " + ex);
-        }*/
+            // TODO handle custom exceptions here
+        }
+
         System.out.println("Iniciou Gravação");
     }
 
     public void pararGravacao() {
-
-        /*try { // Call Web Service Operation
+        
+        try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             port.pararCaptura();
-
         } catch (Exception ex) {
-            System.out.println("Erro ao parar gravação: " + ex);
-        }*/
+            // TODO handle custom exceptions here
+        }
+
+        
         System.out.println("Parou Gravação");
     }
     
     public void ligarCamera()  {
-        /*try { // Call Web Service Operation
+        System.out.println("Ligou Câmera");
+        try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             // TODO process result here
             int result = port.ligarCamera();
-            System.out.println("Result = " + result);
+            System.out.println("Result = "+result);
         } catch (Exception ex) {
-            System.out.println("Erro ao ligar câmera: " + ex);
-        }*/
-        System.out.println("Ligou Câmera");
+            // TODO handle custom exceptions here
+        }
+        
     }
 
     public void pararCamera() {
-        /*try { // Call Web Service Operation
+        try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             // TODO process result here
             int result = port.desligarCamera();
-            System.out.println("Result = " + result);
+            System.out.println("Result = "+result);
         } catch (Exception ex) {
-            System.out.println("Erro ao parar câmera: " + ex);
-        }*/
+            // TODO handle custom exceptions here
+        }
         System.out.println("Parou Câmera");
     }
 
