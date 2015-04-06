@@ -33,42 +33,90 @@ public class UsuarioController {
             indexController.paginaCadastroUsuario(usuario);
         }  
     }
-    
+    @Post
+    @Path("/enviaremailsenha")
+    public void paginaLembrarSenha(Usuario usuario){
+        usuService.lembrarSenha(usuario.getEmail());
+        indexController.paginaLembrarSenha();        
+    }
     @Post
     @Path("/logarUsuario")
     public void logarUsuario(Usuario usuario){
-        /*Usuario u = usuService.logar(usuario);
-        if (u==null){
-            JOptionPane.showMessageDialog(null, "Usuário não encontrado");
+        if ((usuario.getEmail()==null)||(usuario.getSenha()==null)){
+            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios");
+            indexController.paginaLogin();
         }else{
-            if (u.getStatus().equals("Inativo")){
-                JOptionPane.showMessageDialog(null, "Usuário não encontrado");    
+            Usuario u = usuService.logar(usuario);
+            if (u==null){
+                JOptionPane.showMessageDialog(null, "Usuário não encontrado"); 
+                    indexController.paginaLogin();
             }else{
-                if (u.getTipo().equals("1")){*/
-                    indexController.paginaMenuAdm(usuario);
-               /* }else{
-                    indexController.paginaMenu(usuario);
+                if (u.getStatus().equals("Inativo")){
+                    JOptionPane.showMessageDialog(null, "Usuário não encontrado");    
+                    indexController.paginaLogin(); 
+                }else{
+                    System.out.println("oi: "+u.getTipo());
+                    if (u.getTipo().equals("Administrador")){
+                        indexController.paginaMenuAdm(usuario);
+                    }else{
+                        indexController.paginaMenu(usuario);
+                    }
                 }
             }
-        }*/
+        }
     }
 
     public List<Usuario> listaUsuarios() {
-        System.out.println("List Controller");
-        return usuService.listaUsuarios();
+        List<Usuario> listU = usuService.listaUsuarios();
+        for(int i=0;i<listU.size();i++){
+            if (listU.get(i).getTipo().equals("Administrador")){
+                listU.get(i).setTipo("Administrador");
+            }else if(listU.get(i).getTipo().equals("Comum")){
+                listU.get(i).setTipo("Comum");
+            }else{
+                listU.get(i).setTipo("Observador");
+            }
+            
+        }
+        return listU;
     }
     
     @Post
+    @Path("/alterarTipoUsuario")
+    public void alterarTipoUsuario(Usuario usuario){
+        System.out.println(usuario.getTipo());
+        System.out.println(usuario.getEmail());
+        System.out.println(usuario.getStatus());
+        
+        usuario = usuService.retornarUsuario(usuario);
+        System.out.println(usuario.getTipo());
+        System.out.println(usuario.getEmail());
+        System.out.println(usuario.getStatus());
+        if (usuario.getTipo().equals("Comum")) {
+            usuario.setTipo("Observador");
+        } else {
+            usuario.setTipo("Comum");
+        }
+        usuService.editar(usuario);
+        indexController.paginaListagemUsuario();
+    }
+    @Post
     @Path("/alterarStatusUsuario")
     public void alterarStatusUsuario(Usuario usuario){
+        System.out.println(usuario.getTipo());
+        System.out.println(usuario.getEmail());
+        System.out.println(usuario.getStatus());
+        
         usuario = usuService.retornarUsuario(usuario);
+        System.out.println(usuario.getTipo());
+        System.out.println(usuario.getEmail());
+        System.out.println(usuario.getStatus());
         if (usuario.getStatus().equals("Ativo")) {
             usuario.setStatus("Inativo");
         } else {
             usuario.setStatus("Ativo");
         }
         usuService.editar(usuario);
-        //serviceUser.enviarEmailComSenha(usuario.getEmail(), "Cadastro Ativado", " Olá "+usuario.getNome()+"\n Estamos entrando em contato para informá-lo que seu cadastro na Rede LEONA já está ativado. \n\n Obrigado!!");                        
         indexController.paginaListagemUsuario();
     }
 }

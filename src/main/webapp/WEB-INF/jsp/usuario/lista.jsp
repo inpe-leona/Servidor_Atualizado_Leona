@@ -20,17 +20,12 @@
             <div class="container">
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
-                    <ul class="nav navbar-nav ">
+                    <<ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li>
-                        <li><a href="<c:url value='/listagemUsuarios'/>">Usuários</a></li>
-                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
                     </ul>
-                    <div class="right">
-                        <ul class="nav navbar-nav navbar-right ">     
-                            <li style="color: white; font: bold"><a name="username">${username}</a></li>
-                        </ul>    
-                    </div>
                 </div>
             </div>
         </nav>
@@ -54,6 +49,7 @@
                         <th>Nome</th>
                         <th>Status</th>
                         <th>E-mail</th>
+                        <th>Tipo</th>
 
                     </tr>
                 </thead>
@@ -63,11 +59,19 @@
                             <td>${item.nome}</td>
                             <td>${item.status}</td>
                             <td>${item.email}</td>
+                            <td>${item.tipo}</td>
                             <td>
                                 <form action="<c:url value='/alterarStatusUsuario'/>" method="post">
                                     <input type='hidden' name='_method' value='post'/>
                                     <input type='hidden' name='usuario.id' value='${item.id}'/>
                                     <input type="submit" value="Alterar Status"/>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="<c:url value='/alterarTipoUsuario'/>" method="post">
+                                    <input type='hidden' name='_method' value='post'/>
+                                    <input type='hidden' name='usuario.id' value='${item.id}'/>
+                                    <input type="submit" value="Alterar Tipo"/>
                                 </form>
                             </td>
                         </tr>

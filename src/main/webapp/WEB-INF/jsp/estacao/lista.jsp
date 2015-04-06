@@ -21,32 +21,17 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li>
-                        <li><a href="<c:url value='/listagemUsuarios'/>">Usuários</a></li>
-                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
-                    </ul>
-                    <div class="right">
-                        <ul class="nav navbar-nav navbar-right ">     
-                            <li style="color: white; font: bold"><a name="username">${username}</a></li>
-                        </ul>    
-                    </div>                        
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
+                    </ul>                     
                 </div>
             </div>
         </nav>
 
         <div class="container">
-            <br/>
-            <form action="<c:url value='/cadastroEstacao'/>" method="get">
-                <div class="row">
-                    <div class="" align="right">
-                        <a href="<c:url value='/menuAdm'/>">Menu Principal</a> / <a href="<c:url value='/'/>">Sair</a>
-                    </div>
-                    <div class="" align="left">
-                        <input type="submit" value="Cadastrar Estação" class="btn btn-primary"/>
-                    </div>
-
-                </div>
-            </form>
+            <br/>            
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" align="center"> Estações </h1><br/>
@@ -71,13 +56,13 @@
                             <td>${item.estado}</td>
                             <td>${item.cidade}</td>
                             <td>${item.status}</td>
-                            <td>
+                            <!--<td>
                                 <form action="<c:url value='/ping'/>" method="post">
                                     <input type='hidden' name='_method' value='post'/>
                                     <input type='hidden' name='estacao.id' value='${item.id}'/>
                                     <input type="submit" value="Ping"/>
                                 </form>
-                            </td>
+                            </td>-->
                         </tr>
                     </c:forEach>
                 </tbody>

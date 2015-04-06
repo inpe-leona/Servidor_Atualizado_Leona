@@ -17,13 +17,10 @@
 
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a>
-                        </li>
-                        <li><a href="<c:url value='/cadastroUsuario'/>">Cadastrar</a></li>
-                        <li><a href="<c:url value='/login'/>">Login</a>
-                        </li>
-                        <li><a href="<c:url value='/contato'/>">Contato</a>
-                        </li>
+                        <li><a href="<c:url value='/'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
                     </ul>
                 </div>
             </div>

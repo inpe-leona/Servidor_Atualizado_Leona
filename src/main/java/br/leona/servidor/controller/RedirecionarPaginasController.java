@@ -39,5 +39,8 @@ public class RedirecionarPaginasController {
     
     static String GESTAO_OBSERVACAO = webinf+"observacao/observacao.jsp";
     static String CADASTRO_OBSERVACAO_OK = webinf+"observacao/okobservacao.jsp";
+    static String GESTAO_USUARIO = webinf+"usuario/usuario.jsp";
+    static String GESTAO_ESTACAO = webinf+"estacao/estacao.jsp";
+    static String CADASTRO_ESTACAO_SUCESSO = webinf+"estacao/estacaosucesso.jsp";
     
 }

@@ -16,36 +16,25 @@
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
-
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li>
-                        <li><a href="<c:url value='/listagemUsuarios'/>">Usuários</a></li>
-                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
-                    </ul>
-                    <div class="right">
-                        <ul class="nav navbar-nav navbar-right ">     
-                            <li style="color: white; font: bold"><a name="username">${username}</a></li>
-                        </ul>    
-                    </div>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
+                    </ul>                    
                 </div>
             </div>
         </nav>
 
         <div class="container">
-
-            <br/>
-            <div class="row" align="right">
-                <a href="<c:url value='/usuario/menu'/>">Menu Principal</a> / <a href="<c:url value='/'/>">Sair</a>
-            </div>
-
+            <br/>  
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" align="center"> Cadastrar Estação </h1>
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-sm-12">
                     <form action="<c:url value='/cadastrarEstacao'/>" method="post">

@@ -47,7 +47,7 @@ public class EstacaoController {
     public void cadastrarEstacao(Estacao estacao){
         String resposta = estService.cadastrar(estacao);        
         if (resposta == "OK"){
-            indexController.paginaListagemEstacao();
+            indexController.paginaCadastroEstacaoSucesso();
         }else{
             JOptionPane.showMessageDialog(null, resposta);
             indexController.paginaCadastroEstacao();
