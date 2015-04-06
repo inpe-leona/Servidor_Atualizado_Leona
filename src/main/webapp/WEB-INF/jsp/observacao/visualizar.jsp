@@ -102,9 +102,10 @@
                     <div class="collapse navbar-collapse navbar-ex1-collapse ">
                         <ul class="nav navbar-nav ">
                             <li><a href="<c:url value='/'/>">Inicio</a></li>
-                            <li><a href="<c:url value='/estacao'/>">Estações</a></li>
-                            <li><a href="<c:url value='/listagem'/>">Usuários</a></li>
-                            <li><a href="<c:url value='/observacao'/>">Observações</a></li>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
                         </ul>
                         <div class="right">
                             <ul class="nav navbar-nav navbar-right ">     
@@ -172,7 +173,16 @@
             <h2 style="color:black">Nome da Observação: ${observation.nome}</h2>
             <hr>            
             <br>
-            <div align="center"><h2>Aqui vai a Applet</h2></div>
+            <div align="center">
+            
+                <applet code="org.receptor.form.FormReceptApplet"               
+                       codetype="application/java"
+                       archive="ReceptorCam.jar" width="600" height="450">            
+                   <param name="server" value="150.163.46.137">
+                   <param name="port" value="1235">
+               </applet> 
+            
+            </div>
         </div>
     </body>   
 </html>

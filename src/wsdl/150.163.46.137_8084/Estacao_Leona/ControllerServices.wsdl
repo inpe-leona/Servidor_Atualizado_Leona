@@ -4,41 +4,35 @@
 <xsd:import namespace="http://controller.estacao.leona.br/" schemaLocation="http://150.163.46.137:8084/Estacao_Leona/ControllerServices?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="IniciarVideo">
-<part name="parameters" element="tns:IniciarVideo"/>
-</message>
-<message name="IniciarVideoResponse">
-<part name="parameters" element="tns:IniciarVideoResponse"/>
-</message>
-<message name="retornarNomesFotos">
-<part name="parameters" element="tns:retornarNomesFotos"/>
-</message>
-<message name="retornarNomesFotosResponse">
-<part name="parameters" element="tns:retornarNomesFotosResponse"/>
-</message>
-<message name="retornarListaStatus">
-<part name="parameters" element="tns:retornarListaStatus"/>
-</message>
-<message name="retornarListaStatusResponse">
-<part name="parameters" element="tns:retornarListaStatusResponse"/>
-</message>
 <message name="desligarPantilt">
 <part name="parameters" element="tns:desligarPantilt"/>
 </message>
 <message name="desligarPantiltResponse">
 <part name="parameters" element="tns:desligarPantiltResponse"/>
 </message>
-<message name="LigarCamera">
-<part name="parameters" element="tns:LigarCamera"/>
+<message name="pararTransmissao">
+<part name="parameters" element="tns:pararTransmissao"/>
 </message>
-<message name="LigarCameraResponse">
-<part name="parameters" element="tns:LigarCameraResponse"/>
+<message name="pararTransmissaoResponse">
+<part name="parameters" element="tns:pararTransmissaoResponse"/>
 </message>
-<message name="moverElevacao">
-<part name="parameters" element="tns:moverElevacao"/>
+<message name="iniciarCaptura">
+<part name="parameters" element="tns:iniciarCaptura"/>
 </message>
-<message name="moverElevacaoResponse">
-<part name="parameters" element="tns:moverElevacaoResponse"/>
+<message name="iniciarCapturaResponse">
+<part name="parameters" element="tns:iniciarCapturaResponse"/>
+</message>
+<message name="pararCaptura">
+<part name="parameters" element="tns:pararCaptura"/>
+</message>
+<message name="pararCapturaResponse">
+<part name="parameters" element="tns:pararCapturaResponse"/>
+</message>
+<message name="resetPantilt">
+<part name="parameters" element="tns:resetPantilt"/>
+</message>
+<message name="resetPantiltResponse">
+<part name="parameters" element="tns:resetPantiltResponse"/>
 </message>
 <message name="moverAzimute">
 <part name="parameters" element="tns:moverAzimute"/>
@@ -46,124 +40,114 @@
 <message name="moverAzimuteResponse">
 <part name="parameters" element="tns:moverAzimuteResponse"/>
 </message>
-<message name="ResetPantilt">
-<part name="parameters" element="tns:ResetPantilt"/>
+<message name="moverElevacao">
+<part name="parameters" element="tns:moverElevacao"/>
 </message>
-<message name="ResetPantiltResponse">
-<part name="parameters" element="tns:ResetPantiltResponse"/>
+<message name="moverElevacaoResponse">
+<part name="parameters" element="tns:moverElevacaoResponse"/>
 </message>
-<message name="InterruptedException">
-<part name="fault" element="tns:InterruptedException"/>
+<message name="ligarCamera">
+<part name="parameters" element="tns:ligarCamera"/>
 </message>
-<message name="DesligarCamera">
-<part name="parameters" element="tns:DesligarCamera"/>
+<message name="ligarCameraResponse">
+<part name="parameters" element="tns:ligarCameraResponse"/>
 </message>
-<message name="DesligarCameraResponse">
-<part name="parameters" element="tns:DesligarCameraResponse"/>
+<message name="desligarCamera">
+<part name="parameters" element="tns:desligarCamera"/>
 </message>
-<message name="IniciarCaptura">
-<part name="parameters" element="tns:IniciarCaptura"/>
+<message name="desligarCameraResponse">
+<part name="parameters" element="tns:desligarCameraResponse"/>
 </message>
-<message name="IniciarCapturaResponse">
-<part name="parameters" element="tns:IniciarCapturaResponse"/>
+<message name="removerFotos">
+<part name="parameters" element="tns:removerFotos"/>
 </message>
-<message name="IOException">
-<part name="fault" element="tns:IOException"/>
+<message name="removerFotosResponse">
+<part name="parameters" element="tns:removerFotosResponse"/>
 </message>
-<message name="NoPlayerException">
-<part name="fault" element="tns:NoPlayerException"/>
+<message name="removerDiretorio">
+<part name="parameters" element="tns:removerDiretorio"/>
 </message>
-<message name="CannotRealizeException">
-<part name="fault" element="tns:CannotRealizeException"/>
+<message name="removerDiretorioResponse">
+<part name="parameters" element="tns:removerDiretorioResponse"/>
 </message>
-<message name="PararCaptura">
-<part name="parameters" element="tns:PararCaptura"/>
+<message name="iniciarTransmissao">
+<part name="parameters" element="tns:iniciarTransmissao"/>
 </message>
-<message name="PararCapturaResponse">
-<part name="parameters" element="tns:PararCapturaResponse"/>
+<message name="iniciarTransmissaoResponse">
+<part name="parameters" element="tns:iniciarTransmissaoResponse"/>
+</message>
+<message name="retornarListaStatus">
+<part name="parameters" element="tns:retornarListaStatus"/>
+</message>
+<message name="retornarListaStatusResponse">
+<part name="parameters" element="tns:retornarListaStatusResponse"/>
+</message>
+<message name="retornarNomesFotos">
+<part name="parameters" element="tns:retornarNomesFotos"/>
+</message>
+<message name="retornarNomesFotosResponse">
+<part name="parameters" element="tns:retornarNomesFotosResponse"/>
 </message>
 <portType name="ControllerServices">
-<operation name="IniciarVideo">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarVideoRequest" message="tns:IniciarVideo"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarVideoResponse" message="tns:IniciarVideoResponse"/>
-</operation>
-<operation name="retornarNomesFotos">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarNomesFotosRequest" message="tns:retornarNomesFotos"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarNomesFotosResponse" message="tns:retornarNomesFotosResponse"/>
-</operation>
-<operation name="retornarListaStatus">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarListaStatusRequest" message="tns:retornarListaStatus"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarListaStatusResponse" message="tns:retornarListaStatusResponse"/>
-</operation>
 <operation name="desligarPantilt">
 <input wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltRequest" message="tns:desligarPantilt"/>
 <output wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltResponse" message="tns:desligarPantiltResponse"/>
 </operation>
-<operation name="LigarCamera">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/LigarCameraRequest" message="tns:LigarCamera"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/LigarCameraResponse" message="tns:LigarCameraResponse"/>
+<operation name="pararTransmissao">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararTransmissaoRequest" message="tns:pararTransmissao"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararTransmissaoResponse" message="tns:pararTransmissaoResponse"/>
 </operation>
-<operation name="moverElevacao">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverElevacaoRequest" message="tns:moverElevacao"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverElevacaoResponse" message="tns:moverElevacaoResponse"/>
+<operation name="iniciarCaptura">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarCapturaRequest" message="tns:iniciarCaptura"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarCapturaResponse" message="tns:iniciarCapturaResponse"/>
+</operation>
+<operation name="pararCaptura">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararCapturaRequest" message="tns:pararCaptura"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararCapturaResponse" message="tns:pararCapturaResponse"/>
+</operation>
+<operation name="resetPantilt">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/resetPantiltRequest" message="tns:resetPantilt"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/resetPantiltResponse" message="tns:resetPantiltResponse"/>
 </operation>
 <operation name="moverAzimute">
 <input wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverAzimuteRequest" message="tns:moverAzimute"/>
 <output wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverAzimuteResponse" message="tns:moverAzimuteResponse"/>
 </operation>
-<operation name="ResetPantilt">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/ResetPantiltRequest" message="tns:ResetPantilt"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/ResetPantiltResponse" message="tns:ResetPantiltResponse"/>
-<fault message="tns:InterruptedException" name="InterruptedException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/ResetPantilt/Fault/InterruptedException"/>
+<operation name="moverElevacao">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverElevacaoRequest" message="tns:moverElevacao"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/moverElevacaoResponse" message="tns:moverElevacaoResponse"/>
 </operation>
-<operation name="DesligarCamera">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/DesligarCameraRequest" message="tns:DesligarCamera"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/DesligarCameraResponse" message="tns:DesligarCameraResponse"/>
+<operation name="ligarCamera">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/ligarCameraRequest" message="tns:ligarCamera"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/ligarCameraResponse" message="tns:ligarCameraResponse"/>
 </operation>
-<operation name="IniciarCaptura">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarCapturaRequest" message="tns:IniciarCaptura"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarCapturaResponse" message="tns:IniciarCapturaResponse"/>
-<fault message="tns:IOException" name="IOException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarCaptura/Fault/IOException"/>
-<fault message="tns:NoPlayerException" name="NoPlayerException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarCaptura/Fault/NoPlayerException"/>
-<fault message="tns:CannotRealizeException" name="CannotRealizeException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/IniciarCaptura/Fault/CannotRealizeException"/>
+<operation name="desligarCamera">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarCameraRequest" message="tns:desligarCamera"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarCameraResponse" message="tns:desligarCameraResponse"/>
 </operation>
-<operation name="PararCaptura">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/PararCapturaRequest" message="tns:PararCaptura"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/PararCapturaResponse" message="tns:PararCapturaResponse"/>
-<fault message="tns:IOException" name="IOException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/PararCaptura/Fault/IOException"/>
-<fault message="tns:NoPlayerException" name="NoPlayerException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/PararCaptura/Fault/NoPlayerException"/>
-<fault message="tns:CannotRealizeException" name="CannotRealizeException" wsam:Action="http://controller.estacao.leona.br/ControllerServices/PararCaptura/Fault/CannotRealizeException"/>
+<operation name="removerFotos">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerFotosRequest" message="tns:removerFotos"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerFotosResponse" message="tns:removerFotosResponse"/>
+</operation>
+<operation name="removerDiretorio">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerDiretorioRequest" message="tns:removerDiretorio"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerDiretorioResponse" message="tns:removerDiretorioResponse"/>
+</operation>
+<operation name="iniciarTransmissao">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarTransmissaoRequest" message="tns:iniciarTransmissao"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarTransmissaoResponse" message="tns:iniciarTransmissaoResponse"/>
+</operation>
+<operation name="retornarListaStatus">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarListaStatusRequest" message="tns:retornarListaStatus"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarListaStatusResponse" message="tns:retornarListaStatusResponse"/>
+</operation>
+<operation name="retornarNomesFotos">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarNomesFotosRequest" message="tns:retornarNomesFotos"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/retornarNomesFotosResponse" message="tns:retornarNomesFotosResponse"/>
 </operation>
 </portType>
 <binding name="ControllerServicesPortBinding" type="tns:ControllerServices">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="IniciarVideo">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="retornarNomesFotos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="retornarListaStatus">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="desligarPantilt">
 <soap:operation soapAction=""/>
 <input>
@@ -173,7 +157,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="LigarCamera">
+<operation name="pararTransmissao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -182,7 +166,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="moverElevacao">
+<operation name="iniciarCaptura">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="pararCaptura">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="resetPantilt">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -200,19 +202,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ResetPantilt">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-<fault name="InterruptedException">
-<soap:fault name="InterruptedException" use="literal"/>
-</fault>
-</operation>
-<operation name="DesligarCamera">
+<operation name="moverElevacao">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -221,7 +211,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="IniciarCaptura">
+<operation name="ligarCamera">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -229,17 +219,8 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="IOException">
-<soap:fault name="IOException" use="literal"/>
-</fault>
-<fault name="NoPlayerException">
-<soap:fault name="NoPlayerException" use="literal"/>
-</fault>
-<fault name="CannotRealizeException">
-<soap:fault name="CannotRealizeException" use="literal"/>
-</fault>
 </operation>
-<operation name="PararCaptura">
+<operation name="desligarCamera">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -247,15 +228,51 @@
 <output>
 <soap:body use="literal"/>
 </output>
-<fault name="IOException">
-<soap:fault name="IOException" use="literal"/>
-</fault>
-<fault name="NoPlayerException">
-<soap:fault name="NoPlayerException" use="literal"/>
-</fault>
-<fault name="CannotRealizeException">
-<soap:fault name="CannotRealizeException" use="literal"/>
-</fault>
+</operation>
+<operation name="removerFotos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="removerDiretorio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="iniciarTransmissao">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="retornarListaStatus">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="retornarNomesFotos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
 </operation>
 </binding>
 <service name="ControllerServices">

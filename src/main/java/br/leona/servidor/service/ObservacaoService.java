@@ -108,6 +108,18 @@ public class ObservacaoService implements Serializable{
         return dao.getById(observacao.getId());
     }
     
+    public void iniciarTransmissao(){
+        
+        try { // Call Web Service Operation
+            br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
+            br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
+            port.iniciarTransmissao();
+        } catch (Exception ex) {
+            // TODO handle custom exceptions here
+        }
+
+    }
+    
     public void salvarLog(String id, String nome, String movimentacao, int graus) {
         Log l = new Log();
         l.setAcao("Movimentou "+movimentacao+" em "+graus+" graus");
@@ -174,6 +186,127 @@ public class ObservacaoService implements Serializable{
         return 1;
     }
     
+    public void agendarTransmissao() throws ParseException{
+        String dataInicial = "06/04/2015 14:28:00";
+        String dataCaptura = "06/04/2015 14:29:00";
+        String dataFimCaptura = "06/04/2015 14:30:00";
+        String dataCaptura2 = "06/04/2015 14:31:00";
+        String dataFimCaptura2 = "06/04/2015 14:32:00";
+        //String dataInicial = obs.getDataInicio() + " "+obs.getHoraInicio()+":00";        //Colocar no formato
+        //String dataFinal = obs.getDataFim() + " "+obs.getHoraFim()+":00";      
+        SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
+        Date dateI = null;  
+        dateI = df.parse(dataInicial); 
+        System.out.println("D: "+dateI);
+        Date dateC = null;
+        dateC = df.parse(dataCaptura);
+        Date dateFC = null;
+        dateFC = df.parse(dataFimCaptura);
+        Date dateC2 = null;
+        dateC2 = df.parse(dataCaptura2);
+        Date dateFC2 = null;
+        dateFC2 = df.parse(dataFimCaptura2);
+        try {
+            System.out.println("Iniciar Transmissao");
+            SchedulerFactory schedFact = new StdSchedulerFactory();
+            Scheduler sched = schedFact.getScheduler();
+            sched.start();
+            JobDetail job = JobBuilder.newJob(IniciarTransmissao.class)
+                .withIdentity("newJob", "group1")
+                .build();
+            Trigger triggerInicial = TriggerBuilder
+                .newTrigger()
+                .withIdentity("newTrigger", "group1")
+                .startAt(dateI)
+                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
+                .build();
+            sched.scheduleJob(job, triggerInicial);
+           } catch (Exception e) {
+            System.out.println("erro");
+            e.printStackTrace();
+        }
+        
+        try {
+            System.out.println("Iniciar Captura");
+            SchedulerFactory schedFact = new StdSchedulerFactory();
+            Scheduler sched = schedFact.getScheduler();
+            sched.start();
+            JobDetail job = JobBuilder.newJob(IniciarCaptura.class)
+                .withIdentity("newJob", "group2")
+                .build();
+            Trigger triggerInicial = TriggerBuilder
+                .newTrigger()
+                .withIdentity("newTrigger", "group2")
+                .startAt(dateC)
+                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
+                .build();
+            sched.scheduleJob(job, triggerInicial);
+           } catch (Exception e) {
+            System.out.println("erro");
+            e.printStackTrace();
+        }
+         
+        try {
+            System.out.println("Parar Captura");
+            SchedulerFactory schedFact = new StdSchedulerFactory();
+            Scheduler sched = schedFact.getScheduler();
+            sched.start();
+            JobDetail job = JobBuilder.newJob(PararCaptura.class)
+                .withIdentity("newJob", "group3")
+                .build();
+            Trigger triggerInicial = TriggerBuilder
+                .newTrigger()
+                .withIdentity("newTrigger", "group3")
+                .startAt(dateFC)
+                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
+                .build();
+            sched.scheduleJob(job, triggerInicial);
+           } catch (Exception e) {
+            System.out.println("erro");
+            e.printStackTrace();
+        }
+        
+        try {
+            System.out.println("Iniciar Captura");
+            SchedulerFactory schedFact = new StdSchedulerFactory();
+            Scheduler sched = schedFact.getScheduler();
+            sched.start();
+            JobDetail job = JobBuilder.newJob(IniciarCaptura.class)
+                .withIdentity("newJob", "group4")
+                .build();
+            Trigger triggerInicial = TriggerBuilder
+                .newTrigger()
+                .withIdentity("newTrigger", "group4")
+                .startAt(dateC2)
+                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
+                .build();
+            sched.scheduleJob(job, triggerInicial);
+           } catch (Exception e) {
+            System.out.println("erro");
+            e.printStackTrace();
+        }
+         
+        try {
+            System.out.println("Parar Captura");
+            SchedulerFactory schedFact = new StdSchedulerFactory();
+            Scheduler sched = schedFact.getScheduler();
+            sched.start();
+            JobDetail job = JobBuilder.newJob(PararCaptura.class)
+                .withIdentity("newJob", "group5")
+                .build();
+            Trigger triggerInicial = TriggerBuilder
+                .newTrigger()
+                .withIdentity("newTrigger", "group5")
+                .startAt(dateFC2)
+                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
+                .build();
+            sched.scheduleJob(job, triggerInicial);
+           } catch (Exception e) {
+            System.out.println("erro");
+            e.printStackTrace();
+        }
+    }
+    
     public void quartz() throws ParseException{
         String dateString = "10/03/2015 16:32:30";    
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
@@ -185,11 +318,11 @@ public class ObservacaoService implements Serializable{
             Scheduler sched = schedFact.getScheduler();
             sched.start();
             JobDetail job = JobBuilder.newJob()
-                .withIdentity("newJob", "group1")
+                .withIdentity("newJob", "group6")
                 .build();
             Trigger triggerInicial = TriggerBuilder
                 .newTrigger()
-                .withIdentity("newTrigger", "group1")
+                .withIdentity("newTrigger", "group6")
                 .startAt(dateDate)
                 //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
                 .build();

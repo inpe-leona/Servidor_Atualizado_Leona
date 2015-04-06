@@ -24,6 +24,7 @@
                         <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
                         <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
                         <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
                     </ul>
                     <div class="right">
                         <ul class="nav navbar-nav navbar-right ">     

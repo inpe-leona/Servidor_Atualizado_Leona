@@ -19,6 +19,8 @@
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
                         <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
                         <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
                     </ul>
                 </div>
             </div>

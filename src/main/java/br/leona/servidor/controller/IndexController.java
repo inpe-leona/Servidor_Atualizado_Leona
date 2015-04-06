@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.text.ParseException;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
@@ -106,7 +107,7 @@ public class IndexController {
     
     //region Observacao
     @Path("/listagemObservacao")
-    public void paginaListagemObservacao(){
+    public void paginaListagemObservacao() throws ParseException{
         
         ObservacaoController o = new ObservacaoController(result, request);
         List<Observacao> listO = o.listObservacoes();
@@ -158,7 +159,7 @@ public class IndexController {
         result.forwardTo(RedirecionarPaginasController.CADASTRO_OBSERVACAO_OK);
     }
     @Path("/relatorioObservacao")
-    public void paginaRelatorioObservacao(){
+    public void paginaRelatorioObservacao() throws ParseException{
         ObservacaoController o = new ObservacaoController(result, request);
         List<Observacao> listO = o.listObservacoes();
         

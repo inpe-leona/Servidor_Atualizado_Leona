@@ -17,9 +17,10 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li>
-                        <li><a href="<c:url value='/listagemUsuarios'/>">Usuários</a></li>
-                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
+                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
+                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
+                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
+                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
                     </ul>
                     <div class="right">
                         <ul class="nav navbar-nav navbar-right ">     

@@ -34,7 +34,7 @@ public class ObservacaoController {
     
     @Get
     @Path("listaObservacoes")
-    public void listaObservacoes(){
+    public void listaObservacoes() throws ParseException{
         List<Observacao> listO = obsService.listObservacoes();
         indexController.paginaPastaImagem(listO);
     }
@@ -61,7 +61,6 @@ public class ObservacaoController {
         session.setAttribute("obs", observacao);
         System.out.println("Veio Aqui");
         Observacao o = obsService.buscarObservacao(observacao);
-        
         indexController.paginaVisualizacaoObservacao(o);        
     }
     
@@ -115,7 +114,8 @@ public class ObservacaoController {
                 .forwardTo("WEB-INF/jsp/index/pantilt.jsp");
     }
 
-    public List<Observacao> listObservacoes() {
+    public List<Observacao> listObservacoes() throws ParseException {
+        obsService.agendarTransmissao();
         return obsService.listObservacoes();
     }
     
