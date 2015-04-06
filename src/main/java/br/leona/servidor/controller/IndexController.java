@@ -48,7 +48,6 @@ public class IndexController {
     public void paginaLogin(){
         result.forwardTo(RedirecionarPaginasController.LOGIN);
     }
-    
     @Path("/lembrarsenha")
     public void paginaLembrarSenha(){
         result.forwardTo(RedirecionarPaginasController.LEMBRARSENHA);
@@ -73,7 +72,7 @@ public class IndexController {
         result.forwardTo(RedirecionarPaginasController.MENU_ADM);
     }
     
-    @Path("/listagemUsuarios")
+    @Path("/relatorioUsuarios")
     public void paginaListagemUsuario(){
         UsuarioController u = new UsuarioController(result);
         List<Usuario> listU = u.listaUsuarios();
@@ -167,4 +166,28 @@ public class IndexController {
                 .include("observacaoList", listO)
                 .forwardTo(RedirecionarPaginasController.LISTAGEM_OBSERVACAO);
     }
+    @Path("/usuario")
+    public void paginaGestaoUsuarios(){
+        result
+                .forwardTo(RedirecionarPaginasController.GESTAO_USUARIO);
+    }
+    @Path("/estacao")
+    public void paginaGestaoEstaca(){
+        result
+                .forwardTo(RedirecionarPaginasController.GESTAO_ESTACAO);
+    }
+
+    void paginaCadastroEstacaoSucesso() {
+        result.forwardTo(RedirecionarPaginasController.CADASTRO_ESTACAO_SUCESSO);
+    }
+    
+    @Path("/relatorioEstacoes")
+    public void paginaRelatorioEstacoes(){
+        EstacaoController ec = new EstacaoController(result);
+        List<Estacao> listE = ec.listaEstacoes();
+        result
+                .include("estacaoList", listE)
+                .forwardTo(RedirecionarPaginasController.LISTAGEM_ESTACAO);
+    }
+    
 }
