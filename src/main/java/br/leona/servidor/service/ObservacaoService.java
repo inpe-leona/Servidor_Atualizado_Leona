@@ -29,33 +29,35 @@ public class ObservacaoService implements Serializable{
         System.out.println("Graus: "+p);
         int r = 0;
         if (l == "azimute"){
-             
-            /*try { // Call Web Service Operation
+            
+            try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
-                
+                int graus = 0;
                 // TODO process result here
                 java.lang.String result = port.moverAzimute(p);
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }*/
+            }   
+
             r = 1;
             System.out.println("Movimentou pra Esquerda");
         }
         if (l == "elevacao"){
             
-            /*try { // Call Web Service Operation
+            try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
+                int graus = 0;
                 // TODO process result here
                 java.lang.String result = port.moverElevacao(p);
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }*/
+            }
             r = 1;
             System.out.println("Movimentou pra Cima");
         }
@@ -72,6 +74,16 @@ public class ObservacaoService implements Serializable{
         if (l == "RESET"){
             r = 1;
             
+            try { // Call Web Service Operation
+                br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
+                br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
+                // TODO process result here
+                int result = port.resetPantilt();
+                System.out.println("Result = "+result);
+            } catch (Exception ex) {
+                // TODO handle custom exceptions here
+            }
+
             System.out.println("Resetou");
         }
         return r;
@@ -81,8 +93,9 @@ public class ObservacaoService implements Serializable{
         String resposta = validarCampos(observacao);
         System.out.println("Resposta: "+resposta);
         if (resposta == ""){
-            dao.save(observacao);   
+            dao.save(observacao); 
             agendarLigarDesligarCamera(observacao);
+            agendarTransmissao(observacao);
             resposta = "OK";
         }
         return resposta;
@@ -149,11 +162,11 @@ public class ObservacaoService implements Serializable{
             Scheduler sched = schedFact.getScheduler();
             sched.start();
             JobDetail job = JobBuilder.newJob(LigarCamera.class)
-                .withIdentity("newJob", "group1")
+                .withIdentity("newJob", "group4")
                 .build();
             Trigger triggerInicial = TriggerBuilder
                 .newTrigger()
-                .withIdentity("newTrigger", "group1")
+                .withIdentity("newTrigger", "group4")
                 .startAt(dateI)
                 //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
                 .build();
@@ -169,11 +182,11 @@ public class ObservacaoService implements Serializable{
             Scheduler sched = schedFact.getScheduler();
             sched.start();
             JobDetail job = JobBuilder.newJob(DesligarCamera.class)
-                .withIdentity("newJob", "group2")
+                .withIdentity("newJob", "group5")
                 .build();
             Trigger triggerInicial = TriggerBuilder
                 .newTrigger()
-                .withIdentity("newTrigger", "group2")
+                .withIdentity("newTrigger", "group5")
                 .startAt(dateF)
                 //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
                 .build();
@@ -186,26 +199,31 @@ public class ObservacaoService implements Serializable{
         return 1;
     }
     
-    public void agendarTransmissao() throws ParseException{
-        String dataInicial = "06/04/2015 14:28:00";
-        String dataCaptura = "06/04/2015 14:29:00";
-        String dataFimCaptura = "06/04/2015 14:30:00";
-        String dataCaptura2 = "06/04/2015 14:31:00";
-        String dataFimCaptura2 = "06/04/2015 14:32:00";
-        //String dataInicial = obs.getDataInicio() + " "+obs.getHoraInicio()+":00";        //Colocar no formato
-        //String dataFinal = obs.getDataFim() + " "+obs.getHoraFim()+":00";      
+    public void agendarTransmissao(Observacao obs) throws ParseException{
+        String dataInicial = obs.getDataInicio() + " "+obs.getHoraInicio()+":00";        //Colocar no formato
+        String dataFimCaptura = obs.getDataFim() + " "+obs.getHoraFim()+":00";      
+        System.out.println("obs: "+dataFimCaptura);
+        char campo0 = obs.getHoraInicio().charAt(0);
+        char campo1 = obs.getHoraInicio().charAt(1);
+        char campo2 = obs.getHoraInicio().charAt(2);
+        char campo3 = obs.getHoraInicio().charAt(3);
+        char campo4 = obs.getHoraInicio().charAt(4);
+        int c4 = obs.getHoraInicio().charAt(4);
+        c4 = c4+1;
+        char sc4 = (char) c4;
+        
+        String a = String.valueOf(campo0);
+        String b = String.valueOf(campo1);
+        String c = String.valueOf(campo3);
+        String d = String.valueOf(sc4);
+        String dataCaptura = obs.getDataInicio() + " "+a+b+":"+c+d+":00";   
         SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");    
         Date dateI = null;  
         dateI = df.parse(dataInicial); 
-        System.out.println("D: "+dateI);
         Date dateC = null;
         dateC = df.parse(dataCaptura);
         Date dateFC = null;
         dateFC = df.parse(dataFimCaptura);
-        Date dateC2 = null;
-        dateC2 = df.parse(dataCaptura2);
-        Date dateFC2 = null;
-        dateFC2 = df.parse(dataFimCaptura2);
         try {
             System.out.println("Iniciar Transmissao");
             SchedulerFactory schedFact = new StdSchedulerFactory();
@@ -258,46 +276,6 @@ public class ObservacaoService implements Serializable{
                 .newTrigger()
                 .withIdentity("newTrigger", "group3")
                 .startAt(dateFC)
-                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
-                .build();
-            sched.scheduleJob(job, triggerInicial);
-           } catch (Exception e) {
-            System.out.println("erro");
-            e.printStackTrace();
-        }
-        
-        try {
-            System.out.println("Iniciar Captura");
-            SchedulerFactory schedFact = new StdSchedulerFactory();
-            Scheduler sched = schedFact.getScheduler();
-            sched.start();
-            JobDetail job = JobBuilder.newJob(IniciarCaptura.class)
-                .withIdentity("newJob", "group4")
-                .build();
-            Trigger triggerInicial = TriggerBuilder
-                .newTrigger()
-                .withIdentity("newTrigger", "group4")
-                .startAt(dateC2)
-                //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
-                .build();
-            sched.scheduleJob(job, triggerInicial);
-           } catch (Exception e) {
-            System.out.println("erro");
-            e.printStackTrace();
-        }
-         
-        try {
-            System.out.println("Parar Captura");
-            SchedulerFactory schedFact = new StdSchedulerFactory();
-            Scheduler sched = schedFact.getScheduler();
-            sched.start();
-            JobDetail job = JobBuilder.newJob(PararCaptura.class)
-                .withIdentity("newJob", "group5")
-                .build();
-            Trigger triggerInicial = TriggerBuilder
-                .newTrigger()
-                .withIdentity("newTrigger", "group5")
-                .startAt(dateFC2)
                 //.withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(15, 15))
                 .build();
             sched.scheduleJob(job, triggerInicial);

@@ -18,24 +18,18 @@ public class PantiltAzimuteServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private ObservacaoService obsService;
-    private HttpServletRequest request;
 
-    public PantiltAzimuteServlet(HttpServletRequest request) {
+    public PantiltAzimuteServlet() {
         this.obsService = new ObservacaoService();
-        this.request = request;
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int graus = Integer.parseInt(request.getParameter("azimute"));
+        int graus = Integer.parseInt(request.getParameter("azimute"));        
         obsService.movimentar(graus, "azimute");
-        HttpSession session = request.getSession();
-        Observacao ob = (Observacao) session.getAttribute("obs");
-        obsService.salvarLog(ob.getId().toString(), ob.getNome(), "azimute", graus);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
   // TODO Auto-generated method stub
 
     }
-
 }

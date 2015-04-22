@@ -8,6 +8,7 @@
         <title>Ver Observação | LEONA</title>
         <script src="http://code.jquery.com/jquery-latest.js">
         </script>
+        
         <script>
             $(document).ready(function () {
                 $('#iniciarGravacao').click(function (event) {
@@ -116,7 +117,8 @@
                 </div>
             </nav>
             <br/>
-            <table align="center">                
+            <table align="center">    
+                
                 <tr>
                     <td align="center">
                     </td>
@@ -170,7 +172,9 @@
                     </td>
                 </tr>
             </table>
+                    
             <h2 style="color:black">Nome da Observação: ${observation.nome}</h2>
+            <h4><input type="button" id="reset" value="Reset"/></h4>
             <hr>            
             <br>
             <div align="center">

@@ -115,7 +115,6 @@ public class ObservacaoController {
     }
 
     public List<Observacao> listObservacoes() throws ParseException {
-        obsService.agendarTransmissao();
         return obsService.listObservacoes();
     }
     

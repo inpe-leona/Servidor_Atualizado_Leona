@@ -151,16 +151,6 @@
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="desligarPantilt">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="desligarPantiltResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:int"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="removerDiretorio">
 <xs:sequence>
 <xs:element name="diretorio" type="xs:string" minOccurs="0"/>
@@ -169,6 +159,16 @@
 
 <xs:complexType name="removerDiretorioResponse">
 <xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="desligarPantilt">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="desligarPantiltResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
 </xs:complexType>
 
 <xs:complexType name="moverElevacao">

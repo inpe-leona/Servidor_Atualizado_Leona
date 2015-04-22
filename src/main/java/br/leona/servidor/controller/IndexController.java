@@ -190,5 +190,9 @@ public class IndexController {
                 .include("estacaoList", listE)
                 .forwardTo(RedirecionarPaginasController.LISTAGEM_ESTACAO);
     }
+
+    void paginaLogin2() {
+        result.forwardTo(RedirecionarPaginasController.LOGIN2);
+    }
     
 }

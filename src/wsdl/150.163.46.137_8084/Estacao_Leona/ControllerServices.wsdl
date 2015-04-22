@@ -4,12 +4,6 @@
 <xsd:import namespace="http://controller.estacao.leona.br/" schemaLocation="http://150.163.46.137:8084/Estacao_Leona/ControllerServices?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="desligarPantilt">
-<part name="parameters" element="tns:desligarPantilt"/>
-</message>
-<message name="desligarPantiltResponse">
-<part name="parameters" element="tns:desligarPantiltResponse"/>
-</message>
 <message name="pararTransmissao">
 <part name="parameters" element="tns:pararTransmissao"/>
 </message>
@@ -70,6 +64,12 @@
 <message name="removerDiretorioResponse">
 <part name="parameters" element="tns:removerDiretorioResponse"/>
 </message>
+<message name="desligarPantilt">
+<part name="parameters" element="tns:desligarPantilt"/>
+</message>
+<message name="desligarPantiltResponse">
+<part name="parameters" element="tns:desligarPantiltResponse"/>
+</message>
 <message name="iniciarTransmissao">
 <part name="parameters" element="tns:iniciarTransmissao"/>
 </message>
@@ -89,10 +89,6 @@
 <part name="parameters" element="tns:retornarNomesFotosResponse"/>
 </message>
 <portType name="ControllerServices">
-<operation name="desligarPantilt">
-<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltRequest" message="tns:desligarPantilt"/>
-<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltResponse" message="tns:desligarPantiltResponse"/>
-</operation>
 <operation name="pararTransmissao">
 <input wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararTransmissaoRequest" message="tns:pararTransmissao"/>
 <output wsam:Action="http://controller.estacao.leona.br/ControllerServices/pararTransmissaoResponse" message="tns:pararTransmissaoResponse"/>
@@ -133,6 +129,10 @@
 <input wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerDiretorioRequest" message="tns:removerDiretorio"/>
 <output wsam:Action="http://controller.estacao.leona.br/ControllerServices/removerDiretorioResponse" message="tns:removerDiretorioResponse"/>
 </operation>
+<operation name="desligarPantilt">
+<input wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltRequest" message="tns:desligarPantilt"/>
+<output wsam:Action="http://controller.estacao.leona.br/ControllerServices/desligarPantiltResponse" message="tns:desligarPantiltResponse"/>
+</operation>
 <operation name="iniciarTransmissao">
 <input wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarTransmissaoRequest" message="tns:iniciarTransmissao"/>
 <output wsam:Action="http://controller.estacao.leona.br/ControllerServices/iniciarTransmissaoResponse" message="tns:iniciarTransmissaoResponse"/>
@@ -148,15 +148,6 @@
 </portType>
 <binding name="ControllerServicesPortBinding" type="tns:ControllerServices">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="desligarPantilt">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="pararTransmissao">
 <soap:operation soapAction=""/>
 <input>
@@ -239,6 +230,15 @@
 </output>
 </operation>
 <operation name="removerDiretorio">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="desligarPantilt">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

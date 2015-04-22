@@ -43,17 +43,14 @@ public class UsuarioController {
     @Path("/logarUsuario")
     public void logarUsuario(Usuario usuario){
         if ((usuario.getEmail()==null)||(usuario.getSenha()==null)){
-            JOptionPane.showMessageDialog(null, "Todos os campos são obrigatórios");
-            indexController.paginaLogin();
+            indexController.paginaLogin2();
         }else{
             Usuario u = usuService.logar(usuario);
             if (u==null){
-                JOptionPane.showMessageDialog(null, "Usuário não encontrado"); 
-                    indexController.paginaLogin();
+                    indexController.paginaLogin2();
             }else{
-                if (u.getStatus().equals("Inativo")){
-                    JOptionPane.showMessageDialog(null, "Usuário não encontrado");    
-                    indexController.paginaLogin(); 
+                if (u.getStatus().equals("Inativo")){  
+                    indexController.paginaLogin2(); 
                 }else{
                     System.out.println("oi: "+u.getTipo());
                     if (u.getTipo().equals("Administrador")){

@@ -8,6 +8,7 @@
         <title>Projeto LEONA</title>
         <link href="<c:url value="./resources/css/bootstrap.css"/>" rel="stylesheet">
         <link href="<c:url value="./resources/css/half-slider.css"/>" rel="stylesheet">
+        
     </head>
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse " role="navigation">
@@ -36,6 +37,7 @@
             <a class="left carousel-control"></a>
             <a class="right carousel-control"></a>
         </div>
+                    
 
         <div class="container">
             <div class="row section">
@@ -52,8 +54,6 @@
                     <p align="justify">Como resultado do projeto como um todo espera-se a obtenção de um largo conjunto de dados de sprites e outros Eventos Luminosos Transientes (ELTs) ocorridos sobre o Brasil e outros países da América Latina. Os dados permitirão um mapeamento da ocorrência de ELTs na região de observação e de sua sazonalidade. Com esse conjunto de dados diversos estudos científicos poderão ser feitos, por exemplo: (A) Distribuição de ELTs na região sul do país num raio de 800 km do sítio de observação; (B) Estudos das características dos ELTs na região de observação e das características das tempestades geradoras; (C) Estudo comparativo de tempestades geradoras e não-geradoras de ELTs. Também espera-se uma melhor divulgação para a comunidade científica, e para a população de um modo geral, dos trabalhos de pesquisa realizados nessa nova área dentro do INPE. Espera-se o desenvolvimento de um software que execute em um servidor do INPE para o gerenciamento e armazenamento das informações das observações de fenômenos realizadas. A partir desse software deve ser possível o controle das câmeras nas estações remotas, o acompanhamento em tempo real dos fenômenos e o gerenciamento dos dados científicos associados. A partir dessas informações, os pesquisadores terão condições de ter acesso aos dados de observação para estudar esses fenômenos.</p>
                 </div>
             </div>
-                        
-
             <footer>
                 <div class="row">
                     <div class="col-lg-12">

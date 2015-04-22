@@ -19,7 +19,6 @@ public class PararCaptura implements Job {
         //Colocar o método de ligar camera
         System.out.println("Parou captura");
         
-        
         try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
@@ -27,6 +26,7 @@ public class PararCaptura implements Job {
         } catch (Exception ex) {
             // TODO handle custom exceptions here
         }
+
 
 
     }

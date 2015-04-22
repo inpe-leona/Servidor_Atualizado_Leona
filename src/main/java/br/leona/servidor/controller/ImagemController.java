@@ -28,14 +28,14 @@ public class ImagemController {
 
     @Post
     @Path("/verImagensNome")
-
+ 
     public void verImagensNome(Observacao observacao) {
 
         HttpSession session = request.getSession();
         System.out.println(session.getAttribute("img"));
         session.setAttribute("nome", observacao.getNome());
-        //List<String> caminho = imagemService.pegarCaminhosImagens(observacao.getNome());
-        List<String> caminho = new ArrayList<>();
+        List<String> caminho = imagemService.pegarCaminhosImagens(observacao.getNome());
+        //List<String> caminho = new ArrayList<>();
         System.out.println("caminho: " + caminho);
         indexController.paginaImagens(caminho);
     }

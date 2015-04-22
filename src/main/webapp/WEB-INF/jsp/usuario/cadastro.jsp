@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Cadastrar Usuário | Projeto LEONA</title>
         <link href="<c:url value="/resources/css/bootstrap.css"/>" rel="stylesheet"/>
-        <link href="<c:url value="/resources/css/half-slider.css"/>" rel="stylesheet"/>
+        <link href="<c:url value="/resources/css/half-slider.css"/>" rel="stylesheet"/> 
         <link href="<c:url value="/resources/css/modern-business.css"/>" rel="stylesheet"/>
         <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet"/>
     </head>

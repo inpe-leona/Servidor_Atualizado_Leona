@@ -7,6 +7,7 @@ public class RedirecionarPaginasController {
     //region Index
     public static final String CONTATO = webinf+"index/contato.jsp";    
     public static final String LOGIN = webinf+"index/login.jsp";
+    public static final String LOGIN2 = webinf+"index/login2.jsp";
     public static final String LEMBRARSENHA = webinf+"index/lembrarsenha.jsp";
     //endregion
     
