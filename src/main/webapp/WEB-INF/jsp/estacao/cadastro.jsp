@@ -50,37 +50,38 @@
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-1" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3>Estado: <!--<select value="estacao.estado" name="Estados" class="form-control">
+                                <h3><select name="estacao.estado" value="${estacao.estado}" name="Estados" id="estado" class="form-control">
                                         <option value="0">Selecione o Estado</option>
-                                        <option value="ac">Acre</option>
-                                        <option value="al">Alagoas</option>
-                                        <option value="ap">Amapá</option>
-                                        <option value="am">Amazonas</option>
-                                        <option value="ba">Bahia</option>
-                                        <option value="ce">Ceará</option>
-                                        <option value="df">Distrito Federal</option>
-                                        <option value="es">Espirito Santo</option>
-                                        <option value="go">Goiás</option>
-                                        <option value="ma">Maranhão</option>
-                                        <option value="ms">Mato Grosso do Sul</option>
-                                        <option value="mt">Mato Grosso</option>
-                                        <option value="mg">Minas Gerais</option>
-                                        <option value="pa">Pará</option>
-                                        <option value="pb">Paraíba</option>
-                                        <option value="pr">Paraná</option>
-                                        <option value="pe">Pernambuco</option>
-                                        <option value="pi">Piauí</option>
-                                        <option value="rj">Rio de Janeiro</option>
-                                        <option value="rn">Rio Grande do Norte</option>
-                                        <option value="rs">Rio Grande do Sul</option>
-                                        <option value="ro">Rondônia</option>
-                                        <option value="rr">Roraima</option>
-                                        <option value="sc">Santa Catarina</option>
-                                        <option value="sp">São Paulo</option>
-                                        <option value="se">Sergipe</option>
-                                        <option value="to">Tocantins</option>
-                                    </select>--> 
-                                    <input type="text" name="estacao.estado" value="${estacao.estado}" class="form-control" id="estado" placeholder="Estado"/></h3>
+                                        <option value="Acre">Acre</option>
+                                        <option value="Alagoas">Alagoas</option>
+                                        <option value="Amapá">Amapá</option>
+                                        <option value="Amazonas">Amazonas</option>
+                                        <option value="Bahia">Bahia</option>
+                                        <option value="Ceará">Ceará</option>
+                                        <option value="Distrito Federal">Distrito Federal</option>
+                                        <option value="Espirito Santo">Espirito Santo</option>
+                                        <option value="Goiás">Goiás</option>
+                                        <option value="Maranhão">Maranhão</option>
+                                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                                        <option value="Mato Grosso">Mato Grosso</option>
+                                        <option value="Minas Gerais">Minas Gerais</option>
+                                        <option value="Pará">Pará</option>
+                                        <option value="Paraíba">Paraíba</option>
+                                        <option value="Paraná">Paraná</option>
+                                        <option value="Pernambuco">Pernambuco</option>
+                                        <option value="Piauí">Piauí</option>
+                                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                                        <option value="Rondônia">Rondônia</option>
+                                        <option value="Roraima">Roraima</option>
+                                        <option value="Santa Catarina">Santa Catarina</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="Sergipe">Sergipe</option>
+                                        <option value="Tocantins">Tocantins</option>
+                                    </select>
+                                    <!--<input type="text" name="estacao.estado" value="${estacao.estado}" class="form-control" id="estado" placeholder="Estado"/>-->
+                                </h3>
                             </div>
                             <div class="form-group col-lg-2" align="center"></div>
                             <div class="form-group col-lg-4" align="center">

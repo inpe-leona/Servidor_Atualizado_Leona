@@ -42,7 +42,6 @@ public class ImagemService {
         } catch (Exception ex) {
             // TODO handle custom exceptions here
         }
-
         
         System.out.println("Parou Gravação");
     }

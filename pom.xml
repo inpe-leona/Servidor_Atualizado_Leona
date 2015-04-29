@@ -206,10 +206,10 @@
                         </goals>
                         <configuration>
                             <wsdlFiles>
-                                <wsdlFile>150.163.46.137_8084/Estacao_Leona/ControllerServices.wsdl</wsdlFile>
+                                <wsdlFile>150.163.67.80_8084/Estacao_Leona/ControllerServices.wsdl</wsdlFile>
                             </wsdlFiles>
                             <packageName></packageName>
-                            <wsdlLocation>http://150.163.46.137:8084/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
+                            <wsdlLocation>http://150.163.67.80:8084/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
                             <staleFile>${project.build.directory}/jaxws/stale/ControllerServices.stale</staleFile>
                         </configuration>
                         <id>wsimport-generate-ControllerServices</id>

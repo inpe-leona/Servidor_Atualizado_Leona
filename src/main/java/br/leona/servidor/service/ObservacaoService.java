@@ -40,7 +40,7 @@ public class ObservacaoService implements Serializable{
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }   
+            } 
 
             r = 1;
             System.out.println("Movimentou pra Esquerda");
@@ -91,6 +91,9 @@ public class ObservacaoService implements Serializable{
 
     public String cadastrar(Observacao observacao) throws ParseException {
         String resposta = validarCampos(observacao);
+        String nomeObs = observacao.getNome();
+        nomeObs = nomeObs.replaceAll(" ", "_");
+        observacao.setNome(nomeObs);
         System.out.println("Resposta: "+resposta);
         if (resposta == ""){
             dao.save(observacao); 
