@@ -8,7 +8,7 @@
         <title>Projeto LEONA</title>
         <link href="<c:url value="./resources/css/bootstrap.css"/>" rel="stylesheet">
         <link href="<c:url value="./resources/css/half-slider.css"/>" rel="stylesheet">
-        
+
     </head>
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse " role="navigation">
@@ -37,14 +37,35 @@
             <a class="left carousel-control"></a>
             <a class="right carousel-control"></a>
         </div>
-                    
+
 
         <div class="container">
             <div class="row section">
-                <div class="col-lg-12">
-                    <img src='C:\receiver\ProjetoLeona\oi.jpg'>
+                <div class="col-md-6">
                     <h1>Detalhes</h1>
                     <p align="justify">Na Divisão de Aeronomia do INPE encontra-se o primeiro grupo de pesquisa desses fenômenos no Brasil, o grupo de Acoplamento Eletrodiâmico Atmosférico e Espacial - ACATMOS, coordenado pela orientadora. Uma das necessidades para a realização de uma pesquisa de qualidade sobre ELTs no Brasil, e na América do Sul em geral, é poder realizar uma coleta consistente de dados desses fenômenos sobre as tempestades elétricas que ocorrem no país e em todo o continente. Nesse intuito, concebemos a criação de uma rede de câmeras para realizar a observação desses fenômenos, que possam ser controladas remotamente via internet. Essas unidades de observação serão instaladas em toda a América do Sul em locais estratégicos para cobrir as regiões de tempestades mais intensas no continente. Irá ser desenvolvido um software centralizado para o armazenamento e gerenciamento para os dados obtidos das estações remotas. Ele irá consistir de uma aplicação web que interage com uma base de dados que irá armazenar informações relativas a observações, com todos os seus dados associados. A partir dela será possível relacionar e organizar as imagens obtidas em eventos, dando acesso aos pesquisadores que irão fazer as análises. A partir dessa aplicação web será também possível controlar as câmeras das estações remotas e fazer a observação dos eventos. Ao criar uma nova observação de eventos, deve ser possível associá-la a estações que irão participar da observação. A partir de um streaming de imagens enviadas, deve ser possível acompanhar a imagem das câmeras e redirecioná-las para ângulos mais adequados. Deve haver também um acesso as estações para o recebimento das imagens obtidas durante a observação.</p>
+                </div>
+                <<div class="col-md-6">
+                    <h2>Bate Papo</h2>
+                    <input type="text" placeholder="Seu nome..." class="form-control"><br/>
+                    <textarea placeholder="Mensagem..." class="form-control"></textarea><br/>
+                    <input class=" btn btn-info" value="Enviar">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Mensagem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr align="left">
+                                    <td>{{u.id_usuario}}</td>
+                                    <td>{{u.nome_usuario}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
             <hr>

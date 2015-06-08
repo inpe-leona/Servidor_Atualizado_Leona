@@ -177,7 +177,8 @@
             <h4><input type="button" id="reset" value="Reset"/></h4>
             <hr>            
             <br>
-            <div align="center">
+            
+            <div align="center" class="col-md-6">
             
                 <applet code="org.receptor.form.FormReceptApplet"               
                        codetype="application/java"
@@ -187,6 +188,17 @@
                </applet> 
             
             </div>
-        </div>
+            <div align="center" class="col-md-6">
+                <h2>Bate Papo</h2>
+                <input type="text" placeholder="Seu nome..." class="form-control"><br/>
+                <textarea placeholder="Mensagem..." class="form-control"></textarea>   
+                <input class="btn-info" value="Enviar">
+            </div>
+            <div class="clearfix"></div>
+            <hr/>
+            
+            
+            
+        </div> 
     </body>   
 </html>
