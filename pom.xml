@@ -199,23 +199,6 @@
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <version>2.3</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>wsimport</goal>
-                        </goals>
-                        <configuration>
-                            <wsdlFiles>
-                                <wsdlFile>150.163.55.230_8084/Estacao_Leona/ControllerServices.wsdl</wsdlFile>
-                            </wsdlFiles>
-                            <packageName></packageName>
-                            <wsdlLocation>http://150.163.55.230:8084/Estacao_Leona/ControllerServices?wsdl</wsdlLocation>
-                            <staleFile>${project.build.directory}/jaxws/stale/ControllerServices.stale</staleFile>
-                        </configuration>
-                        <id>wsimport-generate-ControllerServices</id>
-                        <phase>generate-sources</phase>
-                    </execution>
-                </executions>
                 <configuration>
                     <!-- Needed with JAXP 1.5 -->
                     <vmArgs>

@@ -20,15 +20,13 @@
             <div class="container">
                 <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
-                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
-                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
-                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
+                        <li><a href="<c:url value='/usuario/menu'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/cadastroObservacao'/>">Cadastrar Observação</a></li>
+                        <li><a href="<c:url value='/listagemObservacao'/>">Ver Observações</a></li>
                     </ul>
                     <div class="right">
                         <ul class="nav navbar-nav navbar-right ">     
-                            <li style="color: white; font: bold"><a name="username">${username}</a></li>
+                            <li style="color: white; font: bold"><a href="<c:url value='/'/>">Sair</a></li>
                         </ul>    
                     </div>
                 </div>
@@ -38,9 +36,6 @@
         <div class="container">
 
             <br/>
-            <div class="row" align="right">
-                <a href="<c:url value='/'/>">Sair</a>
-            </div>
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" align="center"> Menu Principal do Usuário Comum</h1><br/>
@@ -48,9 +43,6 @@
             </div>            
             <hr/>
             <br/>
-            <div align="center">
-                <h4>Este é o Menu Principal</h4>
-            </div>
 
             <div class="container">
                 <footer>

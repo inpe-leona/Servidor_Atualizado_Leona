@@ -17,15 +17,18 @@
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
-
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
-                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
-                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
-                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
-                    </ul>                     
+                        <li><a href="<c:url value='/usuario/menuadm'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/relatorioUsuarios'/>">Usuários</a></li>   
+                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li> 
+                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
+                    </ul>
+                    <div class="right">
+                        <ul class="nav navbar-nav navbar-right ">     
+                            <li style="color: white; font: bold"><a href="<c:url value='/'/>">Sair</a></li>
+                        </ul>    
+                    </div>
                 </div>
             </div>
         </nav>
@@ -35,6 +38,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header" align="center"> Estações </h1><br/>
+                    <a href="<c:url value='/cadastroEstacao'/>"><button type="button" class="btn btn-info">Cadastrar Estação</button></a>
                 </div>
             </div>
 

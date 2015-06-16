@@ -12,16 +12,13 @@
             <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet"/>
     </head>
     <body>
-        <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
+        <nav class="navbar navbar-fixed-top navbar-inverse " role="navigation">
             <div class="container">
-
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
                         <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
-                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
-                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
-                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
+                        <li><a href="<c:url value='/cadastroUsuario'/>">Cadastrar</a></li>
+                        <li><a href="<c:url value='/login'/>">Login</a></li>                        
                     </ul>
                 </div>
             </div>
@@ -49,6 +46,7 @@
                                 <input type="password" name="usuario.senha" value="${usuario.senha}" class="form-control" id="input1" placeholder="Senha"/>
                             </div>
                             <div class="form-group col-lg-12">
+                                ${resposta}
                                 <input type="submit" value="Login" class="btn btn-primary"/>
                             </div>
                             <div class="clearfix"></div>

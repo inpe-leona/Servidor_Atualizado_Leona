@@ -16,14 +16,18 @@
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
             <div class="container">
-                <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
-                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
-                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
-                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
-                    </ul>                    
+                        <li><a href="<c:url value='/usuario/menuadm'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/relatorioUsuarios'/>">Usuários</a></li>   
+                        <li><a href="<c:url value='/listagemEstacao'/>">Estações</a></li> 
+                        <li><a href="<c:url value='/listagemObservacao'/>">Observações</a></li>
+                    </ul>
+                    <div class="right">
+                        <ul class="nav navbar-nav navbar-right ">     
+                            <li style="color: white; font: bold"><a href="<c:url value='/'/>">Sair</a></li>
+                        </ul>    
+                    </div>
                 </div>
             </div>
         </nav>
@@ -50,7 +54,7 @@
                             <div class="clearfix"></div>
                             <div class="form-group col-lg-1" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3><select name="estacao.estado" value="${estacao.estado}" name="Estados" id="estado" class="form-control">
+                                <h3>Estado: <select name="estacao.estado" value="${estacao.estado}" name="Estados" id="estado" class="form-control">
                                         <option value="0">Selecione o Estado</option>
                                         <option value="Acre">Acre</option>
                                         <option value="Alagoas">Alagoas</option>

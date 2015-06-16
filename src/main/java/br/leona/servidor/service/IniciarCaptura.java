@@ -21,7 +21,7 @@ public class IniciarCaptura  implements Job {
         System.out.println("Iniciou captura");
         
         
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             port.iniciarCaptura();
@@ -29,7 +29,7 @@ public class IniciarCaptura  implements Job {
             // TODO handle custom exceptions here
         }
 
-
+*/
         
 
 

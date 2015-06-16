@@ -22,33 +22,33 @@ public class ImagemService {
 
     public void iniciarGravacao() {
         
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             port.iniciarCaptura();
         } catch (Exception ex) {
             // TODO handle custom exceptions here
-        }
+        }*/
 
         System.out.println("Iniciou Gravação");
     }
 
     public void pararGravacao() {
         
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             port.pararCaptura();
         } catch (Exception ex) {
             // TODO handle custom exceptions here
-        }
+        }*/
         
         System.out.println("Parou Gravação");
     }
     
     public void ligarCamera()  {
         System.out.println("Ligou Câmera");
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             // TODO process result here
@@ -56,12 +56,12 @@ public class ImagemService {
             System.out.println("Result = "+result);
         } catch (Exception ex) {
             // TODO handle custom exceptions here
-        }
+        }*/
         
     }
 
     public void pararCamera() {
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             // TODO process result here
@@ -69,7 +69,7 @@ public class ImagemService {
             System.out.println("Result = "+result);
         } catch (Exception ex) {
             // TODO handle custom exceptions here
-        }
+        }*/
         System.out.println("Parou Câmera");
     }
 

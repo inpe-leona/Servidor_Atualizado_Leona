@@ -10,18 +10,22 @@
         <link href="<c:url value="/resources/css/half-slider.css"/>" rel="stylesheet"/>
         <link href="<c:url value="/resources/css/modern-business.css"/>" rel="stylesheet"/>
         <link href="<c:url value="/resources/font-awesome/css/font-awesome.min.css"/>" rel="stylesheet"/>
+        <script src="<c:url value="/resources/js/mascaras.js"/>"></script>
     </head>
     <body>
         <nav class="navbar navbar-fixed-top navbar-inverse " role="navigation">
             <div class="container">
                 <div class="collapse navbar-collapse navbar-ex1-collapse ">
                     <ul class="nav navbar-nav ">
-                        <li><a href="<c:url value='/'/>">Inicio</a></li>
-                        <li><a href="<c:url value='/imagem'/>">Gestão de Imagem</a></li>   
-                        <li><a href="<c:url value='/observacao'/>">Gestão de Observação</a></li> 
-                        <li><a href="<c:url value='/usuario'/>">Gestão de Usuário</a></li> 
-                        <li><a href="<c:url value='/estacao'/>">Gestão de Estacao</a></li> 
+                        <li><a href="<c:url value='/usuario/menu'/>">Inicio</a></li>
+                        <li><a href="<c:url value='/cadastroObservacao'/>">Cadastrar Observação</a></li>
+                        <li><a href="<c:url value='/listagemObservacao'/>">Ver Observações</a></li>
                     </ul>
+                    <div class="right">
+                        <ul class="nav navbar-nav navbar-right ">     
+                            <li style="color: white; font: bold"><a href="<c:url value='/'/>">Sair</a></li>
+                        </ul>    
+                    </div>
                 </div>
             </div>
         </nav>
@@ -45,21 +49,21 @@
                             <div class="clearfix"></div> 
                             <div class="form-group col-lg-1" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3>Data Inicio: <input type="text" name="observacao.dataInicio" value="${observacao.dataInicio}" class="form-control" placeholder="Data Inicio"/></h3>
+                                <h3>Data Inicio: <input type="text" name="observacao.dataInicio" value="${observacao.dataInicio}" onkeyup="maskIt(this,event,'##/##/####')" class="form-control"  placeholder="Data Inicio"/></h3>
                             </div>                           
                             <div class="form-group col-lg-2" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3>Data Fim: <input type="text" name="observacao.dataFim" value="${observacao.dataFim}" class="form-control" id="cidade" placeholder="Data Fim"/></h3>
+                                <h3>Data Fim: <input type="text" name="observacao.dataFim" value="${observacao.dataFim}" class="form-control" id="cidade" placeholder="Data Fim" onkeyup="maskIt(this,event,'##/##/####')"/></h3>
                             </div>
                             <hr/>
                             <div class="clearfix"></div><br/>
                             <div class="form-group col-lg-1" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3>Hora Inicio: <input type="text" name="observacao.horaInicio" value="${observacao.horaInicio}" class="form-control" placeholder="Hora Inicio"/></h3>
+                                <h3>Hora Inicio: <input type="text" name="observacao.horaInicio" value="${observacao.horaInicio}" class="form-control" placeholder="Hora Inicio" onkeyup="maskIt(this,event,'##:##')"/></h3>
                             </div>                           
                             <div class="form-group col-lg-2" align="center"></div>
                             <div class="form-group col-lg-4" align="center">
-                                <h3>Hora Fim: <input type="text" name="observacao.horaFim" value="${observacao.horaFim}" class="form-control" id="cidade" placeholder="Hora Fim"/></h3>
+                                <h3>Hora Fim: <input type="text" name="observacao.horaFim" value="${observacao.horaFim}" class="form-control" id="cidade" placeholder="Hora Fim" onkeyup="maskIt(this,event,'##:##')"/></h3>
                             </div>
                             <hr/>
                             <div class="clearfix"></div><br/>

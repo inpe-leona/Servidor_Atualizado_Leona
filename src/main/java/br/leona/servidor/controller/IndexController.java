@@ -46,8 +46,13 @@ public class IndexController {
     }
     
     @Path("/login")
-    public void paginaLogin(){
-        result.forwardTo(RedirecionarPaginasController.LOGIN);
+    public void paginaLogin(String resposta){
+        if (resposta == null){
+            resposta = "";
+        }
+        result
+                .include("resposta", resposta)
+                .forwardTo(RedirecionarPaginasController.LOGIN);
     }
     @Path("/lembrarsenha")
     public void paginaLembrarSenha(){

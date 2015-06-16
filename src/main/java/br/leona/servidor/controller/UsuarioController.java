@@ -45,12 +45,13 @@ public class UsuarioController {
         if ((usuario.getEmail()==null)||(usuario.getSenha()==null)){
             indexController.paginaLogin2();
         }else{
+            System.out.println("service");
             Usuario u = usuService.logar(usuario);
             if (u==null){
-                    indexController.paginaLogin2();
+                indexController.paginaLogin("Login/Senha não encontrados");
             }else{
                 if (u.getStatus().equals("Inativo")){  
-                    indexController.paginaLogin2(); 
+                    indexController.paginaLogin("Usuário está inativo");
                 }else{
                     System.out.println("oi: "+u.getTipo());
                     if (u.getTipo().equals("Administrador")){

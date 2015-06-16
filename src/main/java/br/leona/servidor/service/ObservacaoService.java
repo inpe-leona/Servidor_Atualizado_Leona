@@ -31,7 +31,7 @@ public class ObservacaoService implements Serializable{
         if (l == "azimute"){
             
             
-            try { // Call Web Service Operation
+            /*try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
@@ -42,7 +42,7 @@ public class ObservacaoService implements Serializable{
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
             }
-
+*/
 
             r = 1;
             System.out.println("Movimentou pra Esquerda");
@@ -50,7 +50,7 @@ public class ObservacaoService implements Serializable{
         if (l == "elevacao"){
             
             
-            try { // Call Web Service Operation
+           /* try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO initialize WS operation arguments here
@@ -60,7 +60,7 @@ public class ObservacaoService implements Serializable{
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO8  handle custom exceptions here
-            }
+            }*/
 
             r = 1;
             System.out.println("Movimentou pra Cima");
@@ -79,7 +79,7 @@ public class ObservacaoService implements Serializable{
             r = 1;
             
             
-            try { // Call Web Service Operation
+            /*try { // Call Web Service Operation
                 br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
                 br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
                 // TODO process result here
@@ -87,7 +87,7 @@ public class ObservacaoService implements Serializable{
                 System.out.println("Result = "+result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here
-            }
+            }*/
 
 
             
@@ -134,13 +134,13 @@ public class ObservacaoService implements Serializable{
     
     public void iniciarTransmissao(){
         
-        try { // Call Web Service Operation
+       /* try { // Call Web Service Operation
             br.leona.estacao.controller.ControllerServices_Service service = new br.leona.estacao.controller.ControllerServices_Service();
             br.leona.estacao.controller.ControllerServices port = service.getControllerServicesPort();
             port.iniciarTransmissao();
         } catch (Exception ex) {
             // TODO handle custom exceptions here
-        }
+        }*/
 
     }
     
